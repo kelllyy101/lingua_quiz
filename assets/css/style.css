@@ -1,4 +1,4 @@
-/* --------- Overall style */
+/* Overall style */
 
 body {
     background-color: white;
@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-/* --------- Heading */
+/* Heading */
 
 .heading {
     text-align: center;
@@ -19,7 +19,7 @@ body {
     padding-right: 5px;
 }
 
-/* --------- Game layout */
+/* Main Game layout */
 
 .game-area {
     background-color: #E6ECF0;
@@ -56,12 +56,12 @@ body {
 }
 
 #score {
-    color: green;
+    color: rgb(65, 199, 65);
     font-weight: bold;
 }
 
 #incorrect {
-    color: red;
+    color: rgb(211, 56, 56);
     font-weight: bold;
 }
 
