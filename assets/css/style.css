@@ -2,7 +2,7 @@
 
 body {
     background-color: white;
-    font-family: "Raleway", sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #445361;
     text-align: center;
 }
@@ -15,11 +15,17 @@ body {
 }
 
 .logo {
-    height: 40px;
+    height: 60px;
     padding-right: 5px;
 }
 
 /* Main Game layout */
+.container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px;
+}
 
 .game-area {
     background-color: #E6ECF0;
@@ -89,10 +95,15 @@ body {
 .btn {
     width: 220px;
     height: 60px;
-    font-family: "Raleway", sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: white;
+    margin: 10px;
+    gap: 5px;
+    border-radius: 5px;
+    /*wait for visual effects for border radius*/
+    color: rgb(112, 112, 234);
 }
 
 .btn:focus {
@@ -117,50 +128,6 @@ body {
     color: #445361;
     position: relative;
     left: -0.5em;
-}
-
-.btn--blue {
-    border-color: blue;
-    color: blue;
-}
-
-.btn--blue:active,
-.btn--blue:hover {
-    background-color: darkblue;
-    color: white;
-}
-
-.btn--orange {
-    border-color: orange;
-    color: orange;
-}
-
-.btn--orange:active,
-.btn--orange:hover {
-    background-color: darkorange;
-    color: white;
-}
-
-.btn--red {
-    border-color: red;
-    color: red;
-}
-
-.btn--red:active,
-.btn--red:hover {
-    background-color: darkred;
-    color: white;
-}
-
-.btn--green {
-    border-color: green;
-    color: green;
-}
-
-.btn--green:active,
-.btn--green:hover {
-    background-color: darkgreen;
-    color: white;
 }
 
 .btn--gray {
