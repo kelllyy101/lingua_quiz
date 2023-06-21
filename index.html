@@ -20,6 +20,33 @@
         LinguaQuiz: Elevate Your English
     </h1>
 
+    <!-- Main screen of game and name input -->
+    <div class="btn-1" id="login-screen">
+
+        <div class="user-input">
+            <label for="user">Please enter your name</label>
+            <br>
+            <input type="text" id="user" name="user" maxlength=12>
+        </div>
+
+        <button class="button" id="user-log">Let's Practice!</button>
+
+        <p class="user-log-error" id="error-message">
+            Please try again. <br>Username must be at least 12 characters.
+        </p>
+    </div>
+
+    <!-- Page offering different English levels -->
+    <div id="choose-level-screen">
+        <h3>Choose your level</h3>
+        <div id="level-buttons">
+            <!-- Buttons to select game level -->
+            <button data-type="beginner" class="button button-level btn-2" type="button">Beginner</button>
+            <button data-type="intermediate" class="button button-level btn-2" type="button">Intermediate</button>
+            <button data-type="difficult" class="button button-level btn-2" type="button">Advanced</button>
+        </div>
+    </div>
+
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
