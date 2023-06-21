@@ -208,6 +208,28 @@ body {
     }
 }
 
+/*Footer*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+}
+
+.footer .container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Show the footer when the user scrolls down */
+.show-footer {
+    display: block;
+}
+
 @media (max-width: 320px) {
     .game-area {
         height: 70vh;

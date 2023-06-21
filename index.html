@@ -17,14 +17,16 @@
 <body>
     <h1 class="heading">
         <img class="logo" src="assets/images/logo-for-the-language-of-tourism-vector-10776661.webp" alt="logo">
-        LinguaQuiz: Elevate Your English
+        LinguaQuiz: <br>Elevate Your English
     </h1>
 
     <!-- Main screen of game and name input -->
     <div class="user-input" id="login-screen">
 
         <div>
-            <label for="user">Please enter your name</label>
+            <label for="user">
+                <h3>Please enter your name</h3>
+            </label>
             <br>
             <input type="text" id="user" name="user" maxlength=12>
         </div>
@@ -39,6 +41,7 @@
     <!-- Page offering different English levels -->
     <div class="user-input" id="choose-level-screen">
         <h3>Choose your level</h3>
+        <p>${user-name}, click on one! </p>
         <div id="level-buttons">
             <!-- Buttons to select game level -->
             <button data-type="beginner" class="button button-level btn-2" type="button">Beginner</button>
@@ -68,6 +71,15 @@
         <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 LinguaQuiz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <noscript>
+        Your browser does not support JavaScript!
+    </noscript>
     <script src="assets/js/script.js"></script>
 </body>
 
