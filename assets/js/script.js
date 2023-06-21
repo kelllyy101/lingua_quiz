@@ -3,6 +3,49 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+// Get the necessary elements
+const loginScreen = document.getElementById('login-screen');
+const userInputElement = document.getElementById('user');
+const userLogButton = document.getElementById('user-log');
+const chooseLevelScreen = document.getElementById('choose-level-screen');
+const levelButtons = document.querySelectorAll('.button-level');
+
+// Function to handle user log button click
+function handleUserLogButtonClick() {
+    const userName = userInputElement.value.trim();
+
+    if (userName.length >= 12) {
+        loginScreen.classList.add('hide');
+        chooseLevelScreen.classList.remove('hide');
+
+        // Update the user name in the choose level screen
+        const userNameElements = document.querySelectorAll('.user-name');
+        userNameElements.forEach(element => {
+            element.textContent = userName;
+        });
+    } else {
+        // Display error message if username is not at least 12 characters
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'block';
+    }
+}
+
+// Function to handle level button click
+function handleLevelButtonClick(e) {
+    const selectedLevel = e.target.getAttribute('data-type');
+    // Perform actions based on the selected level
+    // This is where you can navigate to the questions page or perform any other logic
+    // Log the selected level to the console
+    console.log(`Selected Level: ${selectedLevel}`);
+}
+
+// Add event listener to user log button
+userLogButton.addEventListener('click', handleUserLogButtonClick);
+
+// Add event listener to level buttons
+levelButtons.forEach(button => {
+    button.addEventListener('click', handleLevelButtonClick);
+});
 
 let shuffledQuestions, currentQuestionIndex;
 
