@@ -3,7 +3,6 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
-// Get the necessary elements
 const loginScreen = document.getElementById('login-screen');
 const userInputElement = document.getElementById('user');
 const userLogButton = document.getElementById('user-log');
@@ -34,7 +33,6 @@ function handleUserLogButtonClick() {
 function handleLevelButtonClick(e) {
     const selectedLevel = e.target.getAttribute('data-type');
     // Perform actions based on the selected level
-    // This is where you can navigate to the questions page or perform any other logic
     // Log the selected level to the console
     console.log(`Selected Level: ${selectedLevel}`);
 }
@@ -119,8 +117,49 @@ function clearStatusClass(element) {
     element.classList.remove('wrong');
 }
 
+//Questions
+const questions = [
+    {
+        question: "Which word is a noun?",
+        answers: [
+            { text: "Run", correct: false },
+            { text: "Jump", correct: false },
+            { text: "Apple", correct: true },
+            { text: "Quickly", correct: false }
+        ]
+    },
+    {
+        question: "What is the plural form of 'child'?",
+        answers: [
+            { text: "Childs", correct: false },
+            { text: "Children", correct: true },
+            { text: "Childes", correct: false },
+            { text: "Childen", correct: false }
+        ]
+    },
+    {
+        question: "Which sentence is grammatically correct?",
+        answers: [
+            { text: "I goed to the store yesterday.", correct: false },
+            { text: "She sings good.", correct: false },
+            { text: "They have been swimming in the lake.", correct: true },
+            { text: "He play soccer every day.", correct: false }
+        ]
+    },
+    {
+        question: "Choose the synonym for 'happy'.",
+        answers: [
+            { text: "Sad", correct: false },
+            { text: "Joyful", correct: true },
+            { text: "Angry", correct: false },
+            { text: "Tired", correct: false }
+        ]
+    }
+];
 
-/*Footer*/
+
+
+//Footer
 window.addEventListener('scroll', () => {
     const footer = document.querySelector('.footer');
     if (window.scrollY > 0) {
