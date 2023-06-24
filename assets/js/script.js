@@ -10,24 +10,29 @@ const chooseLevelScreen = document.getElementById('choose-level-screen');
 const levelButtons = document.querySelectorAll('.button-level');
 
 // Function to handle user log button click
-function handleUserLogButtonClick() {
-    const userName = userInputElement.value.trim();
+document.getElementById("user-log").addEventListener("click", checkUsername);
 
-    if (userName.length >= 12) {
-        loginScreen.classList.add('hide');
-        chooseLevelScreen.classList.remove('hide');
+function checkUsername() {
+    let username = document.getElementById("user").value.trim();
 
-        // Update the user name in the choose level screen
-        const userNameElements = document.querySelectorAll('.user-name');
-        userNameElements.forEach(element => {
-            element.textContent = userName;
-        });
+    if (username.length >= 1 && username.length <= 12) {
+        chooseLevelScreen.style.display = "block";
+        mainLoginScreen.style.display = "none";
+        document.getElementById("user-icon").style.display = "block";
+        document.getElementById("username").innerText = username;
     } else {
-        // Display error message if username is not at least 12 characters
-        const errorMessage = document.getElementById('error-message');
-        errorMessage.style.display = 'block';
+        errorMessage.style.display = "block";
+        document.getElementById("user").focus();
+        document.getElementById("user").value = "";
     }
 }
+checkUsername();
+
+document.getElementById("user").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkUsername();
+    }
+});
 
 // Function to handle level button click
 function handleLevelButtonClick(e) {
@@ -157,6 +162,83 @@ const questions = [
     }
 ];
 
+const intermediateQuestions = [
+    {
+        question: "What is the past participle of the verb 'swim'?",
+        answers: [
+            { text: "Swimmed", correct: false },
+            { text: "Swam", correct: true },
+            { text: "Swum", correct: false },
+            { text: "Swimming", correct: false }
+        ]
+    },
+    {
+        question: "Choose the correct form of the verb: 'She ____ a book every day.'",
+        answers: [
+            { text: "Reads", correct: true },
+            { text: "Reading", correct: false },
+            { text: "Read", correct: false },
+            { text: "To read", correct: false }
+        ]
+    },
+    {
+        question: "What is the opposite of 'expand'?",
+        answers: [
+            { text: "Shrink", correct: true },
+            { text: "Grow", correct: false },
+            { text: "Increase", correct: false },
+            { text: "Extend", correct: false }
+        ]
+    },
+    {
+        question: "Choose the correct preposition: 'I'm going ____ vacation next week.'",
+        answers: [
+            { text: "On", correct: true },
+            { text: "At", correct: false },
+            { text: "In", correct: false },
+            { text: "With", correct: false }
+        ]
+    }
+];
+
+const advancedQuestions = [
+    {
+        question: "Which of the following is an example of an idiom? 'Break a leg', 'Runny nose', 'Piece of cake', 'High five'",
+        answers: [
+            { text: "Runny nose", correct: false },
+            { text: "Piece of cake", correct: true },
+            { text: "High five", correct: false },
+            { text: "Break a leg", correct: false }
+        ]
+    },
+    {
+        question: "What does the phrasal verb 'get over' mean?",
+        answers: [
+            { text: "To recover from something", correct: true },
+            { text: "To receive something", correct: false },
+            { text: "To understand something", correct: false },
+            { text: "To give up on something", correct: false }
+        ]
+    },
+    {
+        question: "Choose the correct word to complete the sentence: 'She has a great ____ of humor.'",
+        answers: [
+            { text: "Sense", correct: true },
+            { text: "Feeling", correct: false },
+            { text: "Taste", correct: false },
+            { text: "Touch", correct: false }
+        ]
+    },
+    {
+        question: "What is the plural form of 'datum'?",
+        answers: [
+            { text: "Data", correct: true },
+            { text: "Datas", correct: false },
+            { text: "Datums", correct: false },
+            { text: "Datae", correct: false }
+        ]
+    }
+];
 
 
 //Footer
