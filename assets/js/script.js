@@ -1,9 +1,7 @@
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
-const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
-const loginScreen = document.getElementById('login-screen');
 const userInputElement = document.getElementById('user');
 const userLogButton = document.getElementById('user-log');
 const chooseLevelScreen = document.getElementById('choose-level-screen');
@@ -26,6 +24,7 @@ function checkUsername() {
         document.getElementById("user").value = "";
     }
 }
+
 checkUsername();
 
 document.getElementById("user").addEventListener("keydown", function (event) {
@@ -49,6 +48,32 @@ userLogButton.addEventListener('click', handleUserLogButtonClick);
 levelButtons.forEach(button => {
     button.addEventListener('click', handleLevelButtonClick);
 });
+
+function selectGameLevel() {
+    score = 0;
+    document.getElementById('level-buttons').addEventListener('click', function (event) {
+        if (!event.target.className.includes("button-level")) return; // prevent click over all div with three buttons
+        let button = event.target;
+        let gameLevel = button.getAttribute('data-type');
+        setGame(gameLevel);
+    });
+}
+selectGameLevel();
+
+/**
+ * Set the game screen based on level selected.
+ * Display selected game level, number of guesses left, high score and score.
+ * Set up category and a phrase to be guessed.
+ * Populate underscores for hidden phrase and keyboard buttons.
+ * @param {string} gameLevel 
+ */
+function setGame(gameLevel) {
+    document.getElementById("difficulty-level").innerHTML = `${gameLevel}`;
+    document.getElementById("high-score").innerHTML = highScore;
+    document.getElementById("score").innerHTML = score;
+}
+// ABOVEEEEEEEEE
+
 
 let shuffledQuestions, currentQuestionIndex;
 
