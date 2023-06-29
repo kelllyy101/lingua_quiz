@@ -160,44 +160,47 @@ const advancedQuestions = [
 
 // Function to handle level button click
 function handleLevelButtonClick(e) {
-    const selectedLevel = e.target.getAttribute('data-type');
-    console.log(`Selected Level: ${selectedLevel}`);
-    if (selectedLevel === "beginner") {
-        shuffledQuestions = beginnerQuestions.sort(() => Math.random() - 0.5);
-        currentQuestionSet = shuffledQuestions;
-        playerDifficulty = "beginner";
-        difficultyBeginnerBtn.innerText = "Loading...";
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
-    } else if (selectedLevel === "intermediate") {
-        shuffledQuestions = intermediateQuestions.sort(() => Math.random() - 0.5);
-        currentQuestionSet = shuffledQuestions;
-        playerDifficulty = "intermediate";
-        difficultyIntermediateBtn.innerText = "Loading...";
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
-    } else if (selectedLevel === "advanced") {
-        shuffledQuestions = advancedQuestions.sort(() => Math.random() - 0.5);
-        currentQuestionSet = shuffledQuestions;
-        playerDifficulty = "advanced";
-        difficultyAdvancedBtn.innerText = "Loading...";
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
-    }
-
+    const levelButtonsContainer = document.getElementById('level-buttons');
+    const selectedLevel = levelButtonsContainer.getElementsByClassName('button-level');
 };
-
-
 // Add event listener to user log button
 userLogButton.addEventListener('click', handleLevelButtonClick);
-
 // Add event listener to level buttons
 levelButtons.forEach(button => {
     button.addEventListener('click', handleLevelButtonClick);
     console.log('This works');
 });
-
 handleLevelButtonClick();
+
+function handleButtonClick(event) {
+    var selectedButton = event.target;
+    var selectedButtonId = selectedButton.id;
+    console.log("Button selected:", selectedButtonId);
+    showQuestions(selectedButtonId);
+
+    function handleButtonClick(event) {
+        const selectedButton = event.target;
+        const selectedButtonId = selectedButton.id;
+        console.log("Button selected:", selectedButtonId);
+
+        if (selectedButtonId === 'beginner-btn') {
+            // Display beginner level questions
+            console.log('Displaying beginner questions');
+        } else if (selectedButtonId === 'intermediate-btn') {
+            // Display intermediate level questions
+            console.log('Displaying intermediate questions');
+        } else if (selectedButtonId === 'advanced-btn') {
+            // Display advanced level questions
+            console.log('Displaying advanced questions');
+        }
+    }
+}
+
+
+
+difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
+difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
+difficultyAdvancedBtn.addEventListener('click', handleButtonClick);
 
 
 //Questions
@@ -214,70 +217,3 @@ function startGame() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 }
-
-function setNextQuestion() {
-    resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-    });
-}
-
-function resetState() {
-    clearStatusClass(document.body);
-    nextButton.classList.add('hide');
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
-}
-
-function selectAnswer(e) {
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
-    }
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
-
-//Footer - not working
-window.addEventListener('scroll', () => {
-    const footer = document.querySelector('.footer');
-    if (window.scrollY > 0) {
-        footer.classList.add('show-footer');
-    } else {
-        footer.classList.remove('show-footer');
-    }
-});
-
