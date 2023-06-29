@@ -9,6 +9,7 @@ const levelButtons = document.querySelectorAll('button.button-level');
 const difficultyBeginnerBtn = document.getElementById('beginner-btn');
 const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
+const questionContainer = document.getElementById('question-box');
 let shuffledQuestions = 0;
 let currentQuestionIndex = 0;
 
@@ -165,21 +166,23 @@ function handleLevelButtonClick(e) {
         shuffledQuestions = beginnerQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "beginner";
-        difficultyEasyBtn.innerText = "Loading...";
+        difficultyBeginnerBtn.innerText = "Loading...";
         chooseLevelScreen.style.display = "none";
-        beginnerQuestions.style.display = "block";
+        questionContainer.style.display = "block";
     } else if (selectedLevel === "intermediate") {
         shuffledQuestions = intermediateQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "intermediate";
         difficultyIntermediateBtn.innerText = "Loading...";
         chooseLevelScreen.style.display = "none";
+        questionContainer.style.display = "block";
     } else if (selectedLevel === "advanced") {
         shuffledQuestions = advancedQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "advanced";
         difficultyAdvancedBtn.innerText = "Loading...";
         chooseLevelScreen.style.display = "none";
+        questionContainer.style.display = "block";
     }
 
 };
