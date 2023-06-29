@@ -5,10 +5,13 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 const userInputElement = document.getElementById('user');
 const userLogButton = document.getElementById('user-log');
 const chooseLevelScreen = document.getElementById('choose-level-screen');
-const levelButtons = document.querySelectorAll('.button-level');
+const levelButtons = document.querySelectorAll('button.button-level');
 const difficultyBeginnerBtn = document.getElementById('beginner-btn');
 const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
+let shuffledQuestions = 0;
+let currentQuestionIndex = 0;
+
 
 
 
@@ -37,26 +40,6 @@ document.getElementById("user").addEventListener("keydown", function (event) {
     }
 });
 
-// Function to handle level button click
-function handleLevelButtonClick(e) {
-    const selectedLevel = e.target.getAttribute('data-type');
-    // Perform actions based on the selected level
-    // Log the selected level to the console
-    console.log(`Selected Level: ${selectedLevel}`);
-}
-
-// Add event listener to user log button
-userLogButton.addEventListener('click', handleUserLogButtonClick);
-
-// Add event listener to level buttons
-levelButtons.forEach(button => {
-    button.addEventListener('click', handleLevelButtonClick);
-});
-
-handleLevelButtonClick();
-
-
-//Questions
 const beginnerQuestions = [
     {
         question: "Which word is a noun?",
@@ -174,48 +157,47 @@ const advancedQuestions = [
     }
 ];
 
-
-//Footer
-window.addEventListener('scroll', () => {
-    const footer = document.querySelector('.footer');
-    if (window.scrollY > 0) {
-        footer.classList.add('show-footer');
-    } else {
-        footer.classList.remove('show-footer');
-    }
-});
-
-
-
-function selectGameLevel(event) {
-    let difficulty = event.target.getAttribute('data-type');
-
-    if (difficulty === "beginner") {
+// Function to handle level button click
+function handleLevelButtonClick(e) {
+    const selectedLevel = e.target.getAttribute('data-type');
+    console.log(`Selected Level: ${selectedLevel}`);
+    if (selectedLevel === "beginner") {
         shuffledQuestions = beginnerQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "beginner";
         difficultyEasyBtn.innerText = "Loading...";
-    } else if (difficulty === "intermediate") {
+        chooseLevelScreen.style.display = "none";
+        beginnerQuestions.style.display = "block";
+    } else if (selectedLevel === "intermediate") {
         shuffledQuestions = intermediateQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "intermediate";
         difficultyIntermediateBtn.innerText = "Loading...";
-    } else if (difficulty === "advanced") {
+        chooseLevelScreen.style.display = "none";
+    } else if (selectedLevel === "advanced") {
         shuffledQuestions = advancedQuestions.sort(() => Math.random() - 0.5);
         currentQuestionSet = shuffledQuestions;
         playerDifficulty = "advanced";
         difficultyAdvancedBtn.innerText = "Loading...";
+        chooseLevelScreen.style.display = "none";
     }
 
 };
-selectGameLevel();
 
 
-// ABOVEEEEEEEEE- ADDED diff let var startQuiz 
+// Add event listener to user log button
+userLogButton.addEventListener('click', handleLevelButtonClick);
+
+// Add event listener to level buttons
+levelButtons.forEach(button => {
+    button.addEventListener('click', handleLevelButtonClick);
+    console.log('This works');
+});
+
+handleLevelButtonClick();
 
 
-let shuffledQuestions, currentQuestionIndex;
-
+//Questions
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
@@ -286,8 +268,13 @@ function clearStatusClass(element) {
     element.classList.remove('wrong');
 }
 
-// Event Listeners
-difficultyBeginnerBtn.addEventListener("click", selectGameLevel);
-difficultyIntermediateBtn.addEventListener("click", selectGameLevel);
-difficultyAdvancedBtn.addEventListener("click", selectGameLevel);
+//Footer - not working
+window.addEventListener('scroll', () => {
+    const footer = document.querySelector('.footer');
+    if (window.scrollY > 0) {
+        footer.classList.add('show-footer');
+    } else {
+        footer.classList.remove('show-footer');
+    }
+});
 
