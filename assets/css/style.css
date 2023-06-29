@@ -29,8 +29,8 @@ body {
 }
 
 /* Style for message when no user input & correct answer when not guessed */
-.user-log-error,
-#correct-answer {
+.user-log-error {
+    display: none;
     font-size: 60%;
     color: rgb(244, 33, 33);
     padding-top: 1.2rem;
@@ -161,7 +161,7 @@ body {
 
 .btn--gray {
     margin-top: 25px;
-    background-color: #445361;
+    background-color: #3c4956;
     border: 1px transparent;
     border-radius: 20px;
 }
@@ -170,6 +170,7 @@ body {
 .btn--gray:hover {
     background-color: #0d1013;
 }
+
 
 /* --------- Media queries */
 
@@ -248,7 +249,7 @@ body {
 
 /* Show the footer when the user scrolls down */
 .show-footer {
-    display: block;
+    display: none;
 }
 
 @media (max-width: 320px) {

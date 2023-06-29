@@ -33,7 +33,7 @@
         <button class="button" id="user-log">Let's Practice!</button>
 
         <p class="user-log-error" id="error-message">
-            Please try again. <br>Username must be at least 4 characters.
+            Please try again. <br>Username must be at least 1 characters.
         </p>
     </div>
 
@@ -43,9 +43,12 @@
         <p>${user-name}, click on one! </p>
         <div id="level-buttons">
             <!-- Buttons to select game level -->
-            <button data-type="beginner" class="button button-level btn-2" type="button">Beginner</button>
-            <button data-type="intermediate" class="button button-level btn-2" type="button">Intermediate</button>
-            <button data-type="difficult" class="button button-level btn-2" type="button">Advanced</button>
+            <button data-type="beginner" id="beginner-btn" class="button button-level btn-2"
+                type="button">Beginner</button>
+            <button data-type="intermediate" id="intermediate-btn" class="button button-level btn-2"
+                type="button">Intermediate</button>
+            <button data-type="difficult" id="advanced-btn" class="button button-level btn-2"
+                type="button">Advanced</button>
         </div>
     </div>
 
