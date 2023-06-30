@@ -22,7 +22,7 @@ body {
 /* Main Game layout */
 .user-input1 {
     display: block;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 0 10px 2px;

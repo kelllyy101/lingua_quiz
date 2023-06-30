@@ -25,7 +25,7 @@ function checkUsername() {
     if (username.length >= 1 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
-        document.getElementById("username").innerText = username;
+        document.getElementById("username").innerText = 'user';
     } else {
         errorMessage.style.display = "block";
         document.getElementById("user").focus();
@@ -173,30 +173,27 @@ levelButtons.forEach(button => {
 handleLevelButtonClick();
 
 function handleButtonClick(event) {
-    var selectedButton = event.target;
-    var selectedButtonId = selectedButton.id;
-    console.log("Button selected:", selectedButtonId);
-    showQuestions(selectedButtonId);
-
-    function handleButtonClick(event) {
         const selectedButton = event.target;
         const selectedButtonId = selectedButton.id;
         console.log("Button selected:", selectedButtonId);
 
         if (selectedButtonId === 'beginner-btn') {
             // Display beginner level questions
+            chooseLevelScreen.style.display = "none";
+            questionContainer.style.display = "block";
             console.log('Displaying beginner questions');
         } else if (selectedButtonId === 'intermediate-btn') {
             // Display intermediate level questions
+            chooseLevelScreen.style.display = "none";
+            questionContainer.style.display = "block";
             console.log('Displaying intermediate questions');
         } else if (selectedButtonId === 'advanced-btn') {
             // Display advanced level questions
+            chooseLevelScreen.style.display = "none";
+            questionContainer.style.display = "block";
             console.log('Displaying advanced questions');
         }
     }
-}
-
-
 
 difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
 difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
