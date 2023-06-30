@@ -10,7 +10,7 @@ const difficultyBeginnerBtn = document.getElementById('beginner-btn');
 const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
 const questionContainer = document.getElementById('question-box');
-const questionContainerElement = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('question-container');
 let shuffledQuestions = 0;
 let currentQuestionIndex = 0;
 
@@ -24,7 +24,7 @@ function checkUsername() {
     if (username.length >= 1 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
-        document.getElementById("username").innerText = 'user';
+        document.getElementById("user").innerText = 'user';
     } else {
         errorMessage.style.display = "block";
         document.getElementById("user").focus();
@@ -172,105 +172,164 @@ levelButtons.forEach(button => {
 handleLevelButtonClick();
 
 function handleButtonClick(event) {
-        const selectedButton = event.target;
-        const selectedButtonId = selectedButton.id;
-        console.log("Button selected:", selectedButtonId);
+    const selectedButton = event.target;
+    const selectedButtonId = selectedButton.id;
+    console.log("Button selected:", selectedButtonId);
 
-        if (selectedButtonId === 'beginner-btn') {
-            // Display beginner level questions
-            chooseLevelScreen.style.display = "none";
-            questionContainer.style.display = "block";
-            console.log('Displaying beginner questions');
-        } else if (selectedButtonId === 'intermediate-btn') {
-            // Display intermediate level questions
-            chooseLevelScreen.style.display = "none";
-            questionContainer.style.display = "block";
-            console.log('Displaying intermediate questions');
-        } else if (selectedButtonId === 'advanced-btn') {
-            // Display advanced level questions
-            chooseLevelScreen.style.display = "none";
-            questionContainer.style.display = "block";
-            console.log('Displaying advanced questions');
-        }
+    if (selectedButtonId === 'beginner-btn') {
+        // Display beginner level questions
+        chooseLevelScreen.style.display = "none";
+        questionContainer.style.display = "block";
+        console.log('Displaying beginner questions');
+    } else if (selectedButtonId === 'intermediate-btn') {
+        // Display intermediate level questions
+        chooseLevelScreen.style.display = "none";
+        questionContainer.style.display = "block";
+        console.log('Displaying intermediate questions');
+    } else if (selectedButtonId === 'advanced-btn') {
+        // Display advanced level questions
+        chooseLevelScreen.style.display = "none";
+        questionContainer.style.display = "block";
+        console.log('Displaying advanced questions');
     }
+}
 
 difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
 difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
 difficultyAdvancedBtn.addEventListener('click', handleButtonClick);
 
+function showQuestions(level) {
+    let selectedQuestions;
+
+    if (level === 'beginner') {
+        selectedQuestions = beginnerQuestions;
+    } else if (level === 'intermediate') {
+        selectedQuestions = intermediateQuestions;
+    } else if (level === 'advanced') {
+        selectedQuestions = advancedQuestions;
+    }
+
+    questionContainer.innerHTML = '';
+    questionContainer.style.display = 'block';
+
+    selectedQuestions.forEach((questionObj) => {
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('question');
+        questionElement.innerText = questionObj.question;
+
+        const answersElement = document.createElement('div');
+        answersElement.classList.add('answers');
+
+        questionObj.answers.forEach((answer) => {
+            const answerButton = document.createElement('button');
+            answerButton.innerText = answer.text;
+            answerButton.classList.add('btn');
+            answerButton.addEventListener('click', () => handleAnswer(answer.correct));
+
+            answersElement.appendChild(answerButton);
+        });
+
+        questionElement.appendChild(answersElement);
+        questionContainer.appendChild(questionElement);
+    });
+}
+
+function handleBeginnerButtonClick() {
+    chooseLevelScreen.style.display = 'none';
+    showQuestions('beginner');
+}
+
+function handleIntermediateButtonClick() {
+    chooseLevelScreen.style.display = 'none';
+    showQuestions('intermediate');
+}
+
+function handleAdvancedButtonClick() {
+    chooseLevelScreen.style.display = 'none';
+    showQuestions('advanced');
+}
+
+const beginnerButton = document.getElementById('beginner-btn');
+const intermediateButton = document.getElementById('intermediate-btn');
+const advancedButton = document.getElementById('advanced-btn');
+
+beginnerButton.addEventListener('click', handleBeginnerButtonClick);
+intermediateButton.addEventListener('click', handleIntermediateButtonClick);
+advancedButton.addEventListener('click', handleAdvancedButtonClick);
+
 
 //Questions
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion()
-})
+    currentQuestionIndex++;
+    setNextQuestion();
+});
 
 function startGame() {
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
-  questionContainerElement.classList.remove('hide')
-  chooseLevelScreen.style.display = "none";
-  questionContainer.style.display = "block";
-  shuffledQuestions = shuffleQuestions(selectedLevel);
-  displayQuestion();
-  setNextQuestion()
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    questionContainerElement.classList.remove('hide');
+    chooseLevelScreen.style.display = "none";
+    questionContainer.style.display = "block";
+    shuffledQuestions = shuffleQuestions(selectedLevel);
+    displayQuestion();
+    setNextQuestion();
 }
 
 function setNextQuestion() {
-  resetState()
-  showQuestion(shuffledQuestions[currentQuestionIndex])
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
-  questionElement.innerText = question.question
-  question.answers.forEach(answer => {
-    const button = document.createElement('button')
-    button.innerText = answer.text
-    button.classList.add('btn')
-    if (answer.correct) {
-      button.dataset.correct = answer.correct
-    }
-    button.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(button)
-  })
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    });
 }
 
 function resetState() {
-  clearStatusClass(document.body)
-  nextButton.classList.add('hide')
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
+    clearStatusClass(document.body);
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
 }
 
 function selectAnswer(e) {
-  const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
-  } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
-  }
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    setStatusClass(document.body, correct);
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    });
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide');
+    } else {
+        startButton.innerText = 'Restart';
+        startButton.classList.remove('hide');
+    }
 }
 
 function setStatusClass(element, correct) {
-  clearStatusClass(element)
-  if (correct) {
-    element.classList.add('correct')
-  } else {
-    element.classList.add('wrong')
-  }
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
 }
 
 function clearStatusClass(element) {
-  element.classList.remove('correct')
-  element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
