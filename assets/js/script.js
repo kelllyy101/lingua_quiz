@@ -285,3 +285,15 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
+function handleAnswer(questionIndex, answerIndex, isCorrect) {
+    const buttons = document.querySelectorAll('#questions > div:nth-child(' + (questionIndex + 1) + ') button');
+    buttons.forEach((button, index) => {
+        if (index === answerIndex) {
+            button.classList.add(isCorrect ? 'correct' : 'wrong');
+            button.classList.add('white-text');
+        } else {
+            button.disabled = true;
+        }
+    
+    });
+}

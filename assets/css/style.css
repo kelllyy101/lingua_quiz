@@ -132,7 +132,7 @@ body {
     gap: 5px;
     border-radius: 5px;
     /*wait for visual effects for border radius*/
-    color: rgb(112, 112, 234);
+    color: #445361;
 }
 
 .btn:focus {
@@ -230,6 +230,17 @@ body {
     }
 }
 
+.correct {
+    background-color: rgb(184, 255, 184);
+}
+
+.wrong {
+    background-color: rgb(251, 170, 170);
+}
+
+.white-text {
+    color: white;
+}
 /*Footer*/
 .footer {
     position: fixed;
