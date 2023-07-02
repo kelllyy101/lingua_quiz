@@ -112,7 +112,62 @@ const intermediateQuestions = [
             { text: "In", correct: false },
             { text: "With", correct: false }
         ]
+    },
+    {
+        question: 'Which word is an adverb?',
+        answers: [
+            { text: 'Quickly', correct: true },
+            { text: 'House', correct: false },
+            { text: 'Jumped', correct: false },
+            { text: 'Beautiful', correct: false },
+        ]
+    },
+    {
+        question: 'Choose the correct synonym for "happy".',
+        answers: [
+            { text: 'Sad', correct: false },
+            { text: 'Joyful', correct: true },
+            { text: 'Angry', correct: false },
+            { text: 'Tired', correct: false },
+        ]
+    },
+    {
+        question: 'Which of the following is an example of an indefinite pronoun?',
+        answers: [
+            { text: 'He', correct: false },
+            { text: 'They', correct: false },
+            { text: 'Everyone', correct: true },
+            { text: 'My', correct: false },
+        ]
+    },
+    {
+        question: 'What is the correct past participle of the verb "swim"?',
+        answers: [
+            { text: 'Swam', correct: false },
+            { text: 'Swum', correct: true },
+            { text: 'Swimmed', correct: false },
+            { text: 'Swimming', correct: false },
+        ]
+    },
+    {
+        question: 'Identify the correct spelling.',
+        answers: [
+            { text: 'Recieve', correct: false },
+            { text: 'Receive', correct: true },
+            { text: 'Recievee', correct: false },
+            { text: 'Receave', correct: false },
+        ]
+    },
+    {
+        question: 'Which of the following is a subordinating conjunction?',
+        answers: [
+            { text: 'And', correct: false },
+            { text: 'But', correct: false },
+            { text: 'Although', correct: true },
+            { text: 'Or', correct: false },
+        ]
     }
+    
 ];
 
 const advancedQuestions = [

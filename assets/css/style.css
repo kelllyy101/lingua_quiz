@@ -119,6 +119,10 @@ body {
     padding: 25px;
 }
 
+.score-message-hide {
+    display: none;
+}
+
 /* --------- Buttons */
 
 .btn {
@@ -241,6 +245,7 @@ body {
 .white-text {
     color: white;
 }
+
 /*Footer*/
 .footer {
     position: fixed;
