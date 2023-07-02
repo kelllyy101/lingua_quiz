@@ -18,7 +18,7 @@ document.getElementById("user-log").addEventListener("click", checkUsername);
 function checkUsername() {
     let username = document.getElementById("user").value.trim();
     let errorMessage = document.getElementById("error-message");
-    
+
     if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
@@ -378,9 +378,6 @@ startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     if (levelQuestions.length <= currentQuestionIndex) {
-        // I am special. Very special. That's why my boyfriend
-        // is scoping the piece of code that I need to change.
-        // I only need to change the code between HERE
         console.log("hola");
         console.log(nextButton.classList);
         nextButton.style.display = "none";
@@ -394,7 +391,6 @@ nextButton.addEventListener('click', () => {
         document.getElementById('question-box').style.display = 'none';
         console.log(scoreMessage);
         return;
-        // And HERE. I pinky promise I am not going to change anything else.
     }
     setNextQuestion()
 })
@@ -453,11 +449,11 @@ function selectAnswer(e) {
         wrongCounter++
         document.getElementById('incorrect').innerText = wrongCounter
     }
-    //   setStatusClass(document.body, correct)
+    setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    // startButton.innerText = 'Restart'
+    //startButton.innerText = 'Restart'
     //startButton.classList.remove('hide')
 
 }
