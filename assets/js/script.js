@@ -11,23 +11,26 @@ const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
 const questionContainer = document.getElementById('question-box');
 const questionContainerElement = document.getElementById('question-container');
-
+const scoreMessage = document.getElementById('score-message');
 // Function to handle user log button click
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
 function checkUsername() {
     let username = document.getElementById("user").value.trim();
     let errorMessage = document.getElementById("error-message");
-    if (username.length >= 1 && username.length <= 12) {
+    
+    if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
-        document.getElementById("user").innerText = 'user';
+        errorMessage.style.display = "none";
+        document.getElementById("user").value = username;
     } else {
-        errorMessage.style.display = "block";
+        errorMessage.style.display = 'block';
         document.getElementById("user").focus();
         document.getElementById("user").value = "";
     }
 }
+
 
 checkUsername();
 
@@ -221,7 +224,7 @@ const intermediateQuestions = [
             { text: 'Or', correct: false },
         ]
     }
-    
+
 ];
 
 const advancedQuestions = [
@@ -374,6 +377,20 @@ let levelQuestions, currentQuestionIndex
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
+    if (levelQuestions.length <= currentQuestionIndex) {
+        // I am special. Very special. That's why my boyfriend
+        // is scoping the piece of code that I need to change.
+        // I only need to change the code between HERE
+        console.log("hola");
+        console.log(nextButton.classList);
+        nextButton.style.display = "none";
+        startButton.style.display = "none";
+        questionElement.style.display = "none";
+        answerButtonsElement.style.display = "none";
+        scoreMessage.style.display = "block";
+        return;
+        // And HERE. I pinky promise I am not going to change anything else.
+    }
     setNextQuestion()
 })
 
@@ -428,19 +445,16 @@ function selectAnswer(e) {
         document.getElementById('score').innerText = correctCounter
     }
     else {
-       wrongCounter++
-       document.getElementById('incorrect').innerText = wrongCounter
+        wrongCounter++
+        document.getElementById('incorrect').innerText = wrongCounter
     }
     //   setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    if (levelQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-    }
+    // startButton.innerText = 'Restart'
+    //startButton.classList.remove('hide')
+
 }
 
 function setStatusClass(element, correct) {
