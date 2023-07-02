@@ -73,6 +73,60 @@ const beginnerQuestions = [
             { text: "Angry", correct: false },
             { text: "Tired", correct: false }
         ]
+    },
+    {
+        question: 'What is the opposite of "hot"?',
+        answers: [
+            { text: 'Cold', correct: true },
+            { text: 'Big', correct: false },
+            { text: 'Happy', correct: false },
+            { text: 'Fast', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is a verb?',
+        answers: [
+            { text: 'Chair', correct: false },
+            { text: 'Run', correct: true },
+            { text: 'Blue', correct: false },
+            { text: 'Table', correct: false },
+        ]
+    },
+    {
+        question: 'What is the plural form of "cat"?',
+        answers: [
+            { text: 'Cats', correct: true },
+            { text: 'Dog', correct: false },
+            { text: 'Sheep', correct: false },
+            { text: 'Mouse', correct: false },
+        ]
+    },
+    {
+        question: 'Which word means the opposite of "old"?',
+        answers: [
+            { text: 'New', correct: true },
+            { text: 'Tall', correct: false },
+            { text: 'Small', correct: false },
+            { text: 'Happy', correct: false },
+        ]
+    },
+    {
+        question: 'What is the past tense of "eat"?',
+        answers: [
+            { text: 'Ate', correct: true },
+            { text: 'Eating', correct: false },
+            { text: 'Eaten', correct: false },
+            { text: 'Eats', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is an adjective?',
+        answers: [
+            { text: 'Sun', correct: false },
+            { text: 'Hot', correct: true },
+            { text: 'Run', correct: false },
+            { text: 'Happy', correct: false },
+        ]
     }
 ];
 
@@ -205,6 +259,60 @@ const advancedQuestions = [
             { text: "Datas", correct: false },
             { text: "Datums", correct: false },
             { text: "Datae", correct: false }
+        ]
+    },
+    {
+        question: 'What is the correct plural form of "ox"?',
+        answers: [
+            { text: 'Oxen', correct: true },
+            { text: 'Oxes', correct: false },
+            { text: 'Oxies', correct: false },
+            { text: 'Oxs', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is a synonym for "generous"?',
+        answers: [
+            { text: 'Stingy', correct: false },
+            { text: 'Kind', correct: true },
+            { text: 'Rude', correct: false },
+            { text: 'Lazy', correct: false },
+        ]
+    },
+    {
+        question: 'What is the superlative form of "good"?',
+        answers: [
+            { text: 'Better', correct: false },
+            { text: 'Best', correct: true },
+            { text: 'Gooder', correct: false },
+            { text: 'Goodest', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is an adverb?',
+        answers: [
+            { text: 'Quickly', correct: true },
+            { text: 'House', correct: false },
+            { text: 'Jumped', correct: false },
+            { text: 'Beautiful', correct: false },
+        ]
+    },
+    {
+        question: 'Choose the correct synonym for "happy".',
+        answers: [
+            { text: 'Sad', correct: false },
+            { text: 'Joyful', correct: true },
+            { text: 'Angry', correct: false },
+            { text: 'Tired', correct: false },
+        ]
+    },
+    {
+        question: 'What is the opposite of "strong"?',
+        answers: [
+            { text: 'Weak', correct: true },
+            { text: 'Powerful', correct: false },
+            { text: 'Brave', correct: false },
+            { text: 'Fast', correct: false },
         ]
     }
 ];
