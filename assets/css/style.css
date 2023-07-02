@@ -129,12 +129,12 @@ body {
 
 /* --------- Buttons */
 #next-btn{
-    display: block;
-    margin-left: 47px;
+    display: inline;
+    margin-left: 10px;
 }
 #start-btn{
-    display: block;
-    margin-left: 47px;
+    display: inline;
+    margin-left: 10px;
 }
 .btn {
     width: 220px;
@@ -259,7 +259,7 @@ body {
 }
 
 /*Footer*/
-.footer {
+footer {
     position: fixed;
     bottom: 0;
     left: 0;

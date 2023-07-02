@@ -387,7 +387,12 @@ nextButton.addEventListener('click', () => {
         startButton.style.display = "none";
         questionElement.style.display = "none";
         answerButtonsElement.style.display = "none";
+        scoreMessage.classList.remove('hide');
         scoreMessage.style.display = "block";
+        document.getElementById('final-score').innerText = correctCounter;
+        document.getElementById('score-area').style.display = 'none';
+        document.getElementById('question-box').style.display = 'none';
+        console.log(scoreMessage);
         return;
         // And HERE. I pinky promise I am not going to change anything else.
     }
