@@ -328,7 +328,6 @@ userLogButton.addEventListener('click', handleLevelButtonClick);
 // Add event listener to level buttons
 levelButtons.forEach(button => {
     button.addEventListener('click', handleLevelButtonClick);
-    console.log('This works');
 });
 handleLevelButtonClick();
 
@@ -337,25 +336,18 @@ let difficulty
 function handleButtonClick(event) {
     const selectedButton = event.target;
     const selectedButtonId = selectedButton.id;
-    console.log("Button selected:", selectedButtonId);
     let currentQA
     if (selectedButtonId === 'beginner-btn') {
         difficulty = "beginner"
         currentQA = beginnerQuestions[currentQuestionIndex]
         levelQuestions = beginnerQuestions
-        // Display beginner level questions
-        console.log('Displaying beginner questions');
     } else if (selectedButtonId === 'intermediate-btn') {
         difficulty = "intermediate"
         currentQA = intermediateQuestions[currentQuestionIndex]
         levelQuestions = intermediateQuestions
-        // Display intermediate level questions
-        console.log('Displaying intermediate questions');
     } else if (selectedButtonId === 'advanced-btn') {
         difficulty = "advanced"
         levelQuestions = advancedQuestions
-        // Display advanced level questions
-        console.log('Displaying advanced questions');
     }
 
 
@@ -376,8 +368,6 @@ startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     if (levelQuestions.length <= currentQuestionIndex) {
-        console.log("hola");
-        console.log(nextButton.classList);
         nextButton.style.display = "none";
         startButton.style.display = "none";
         questionElement.style.display = "none";
@@ -387,7 +377,6 @@ nextButton.addEventListener('click', () => {
         document.getElementById('final-score').innerText = correctCounter;
         document.getElementById('score-area').style.display = 'none';
         document.getElementById('question-box').style.display = 'none';
-        console.log(scoreMessage);
         return;
     }
     setNextQuestion()
@@ -451,8 +440,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    //startButton.innerText = 'Restart'
-    //startButton.classList.remove('hide')
+    
 
 }
 
