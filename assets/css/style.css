@@ -276,9 +276,6 @@ footer {
 }
 
 /* Show the footer when the user scrolls down */
-.show-footer {
-    display: none;
-}
 
 @media (max-width: 320px) {
     .game-area {
