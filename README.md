@@ -189,17 +189,29 @@ By manually going through each quiz and answering the questions, the development
 
 - HTML
 - CSS
+- JavaScript
 
 ## Software
 
-- Text editor (e.g., Visual Studio Code, Sublime Text)
-- Web browser for testing (e.g., Chrome, Firefox)
-- Version control system (e.g., Git)
+- Text editor (Visual Studio Code + Code Anywhere)
+- Web browser for testing (Chrome, Firefox Developer Edition, Safari and Modzilla)
+- Version control system (Git)
 
 ## Media and Credits
 
-- Credit any media used, such as images or icons, with proper attribution
+The development of this English learning quiz project was made possible with the help of various resources and inspirations. The following sources were instrumental in the creation of this project:
+
+CodePen (codepen.io): CodePen provided inspiration and ideas for implementing certain features and design elements.
+
+Web Dev Simplified (YouTube channel): Web Dev Simplified's informative tutorials and videos helped in understanding and implementing certain concepts and techniques.
+
+W3Schools (w3schools.com): W3Schools served as a valuable reference for HTML, CSS, and JavaScript, providing guidance and examples for different aspects of web development.
+
+SitePoint (sitepoint.com): The article titled "Simple JavaScript Quiz" on SitePoint provided insights and inspiration for the quiz functionality and structure.
+
+CodingTorque (codingtorque.com): The tutorial on "Building a Quiz App using JavaScript" on CodingTorque served as a helpful resource for understanding the process of creating a quiz application.
+
+Various online forums and communities: Contributions and discussions from the web development community on platforms like Stack Overflow, Reddit, and GitHub provided valuable insights and solutions to specific challenges encountered during the development process.
 
 ## Thanks to
-
-- Acknowledge anyone who provided support or inspiration during the development process
+I would like to express my gratitude to Code Institute and my mentor for their exceptional web development curriculum and to my mentor for their invaluable guidance and support throughout this project. Thank you for providing the resources and expertise that have helped me grow as a developer.
