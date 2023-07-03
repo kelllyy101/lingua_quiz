@@ -128,14 +128,37 @@ By conducting comprehensive feature testing, the development team aimed to ident
 ### Footer Testing
 
 - Validate all links in the footer section and ensure they navigate to the correct destinations
+- Links in footer section also lead to a new page
 
 ### Typo Errors
 
-- Carefully proofread all text content to identify and correct any spelling or grammar errors
+- Carefully proofread all text content to identify and correct any spelling or grammar errors (EXCEPT for wrong answers in quiz questions)
 
 ### Manual Testing
 
-- Manually go through each quiz, answering questions to ensure correct functionality and scoring
+To ensure the correct functionality and scoring of the English learning quiz, thorough manual testing was conducted. The testing process involved manually going through each quiz and answering the questions. The following steps were followed during the manual testing phase:
+
+Launch the quiz application on different devices and browsers to assess its compatibility and responsiveness.
+
+Navigate to the quiz section and select a specific difficulty level (beginner, intermediate, or advanced).
+
+Read each question carefully and select the most appropriate answer.
+
+Verify that the selected answer is visually highlighted or indicated to provide immediate feedback to the user.
+
+Progress through the quiz by clicking the "Next" button, ensuring that the application transitions smoothly to the next question.
+
+Test the "Previous" button functionality to confirm that it correctly navigates back to the previous question.
+
+Verify that the quiz correctly tracks the number of correct and incorrect answers.
+
+Test the scoring system by intentionally answering questions correctly and incorrectly, ensuring that the score updates accurately.
+
+Repeat the manual testing process for each difficulty level, thoroughly checking all the questions and answer options.
+
+Pay special attention to questions with complex answer choices or special instructions, ensuring they are correctly interpreted and graded.
+
+By manually going through each quiz and answering the questions, the development team meticulously assessed the correctness of the quiz functionality and scoring. This testing approach helped identify any issues or discrepancies, allowing for prompt resolution and the delivery of a reliable and accurate English learning quiz.
 
 ### Validator Testing
 
