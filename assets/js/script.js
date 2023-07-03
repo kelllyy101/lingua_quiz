@@ -32,8 +32,6 @@ function checkUsername() {
 }
 
 
-//checkUsername();
-
 document.getElementById("user").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         checkUsername();
