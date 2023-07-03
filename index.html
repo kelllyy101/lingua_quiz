@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="keywords" content="Learn English, English Quiz, Test your knowledge, Beginners English, Intermediate English and Avanced" />
     <!-- font awesome and google fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>LinguaQuiz</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 </head>
 
 <body>
@@ -40,7 +41,7 @@
     <!-- Page offering different English levels -->
     <div class="user-input2" id="choose-level-screen">
         <h3>Choose your level</h3>
-        <p>${user-name}, click on one! </p>
+        <p>${username}, click on one! </p>
         <div id="level-buttons">
             <!-- Buttons to select game level -->
             <button data-type="beginner" id="beginner-btn" class="button-level" type="button">Beginner</button>
@@ -61,18 +62,32 @@
             </div>
         </div>
         <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="start-btn" class="start-btn btn">Restart</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
     </div>
 
-    <div class="score-area">
+    <div id="score-area" class="score-area">
         <p class="scores">Correct Answers <span id="score">0</span></p>
         <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
     </div>
+    <div>
+        <div id="score-message" class="hide">
+            <h2>Well Done For Completing This Quiz!</h2>
+            <h3>Your score is <span id="final-score"></span> out of 10.</h3>
+        </div>
+    </div>
 
     <footer class="footer">
-        <div class="container">
+        <div class="footer-left">
+            <a href="https://github.com/kelllyy101" target="_blank">
+                <img src="assets/images/25231.png" alt="GitHub Icon">
+            </a>
+        </div>
+        <div class="footer-right">
+            <p>Created by <a href="https://github.com/kelllyy101" target="_blank">kelllyy101</a></p>
+        </div>
+        <div>
             <p>&copy; 2023 LinguaQuiz. All rights reserved.</p>
         </div>
     </footer>

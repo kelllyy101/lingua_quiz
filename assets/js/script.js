@@ -11,28 +11,26 @@ const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
 const questionContainer = document.getElementById('question-box');
 const questionContainerElement = document.getElementById('question-container');
-let shuffledQuestions = 0;
-let currentQuestionIndex = 0;
-
-
+const scoreMessage = document.getElementById('score-message');
 // Function to handle user log button click
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
 function checkUsername() {
     let username = document.getElementById("user").value.trim();
     let errorMessage = document.getElementById("error-message");
-    if (username.length >= 1 && username.length <= 12) {
+
+    if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
-        document.getElementById("user").innerText = 'user';
+        errorMessage.style.display = "none";
+        document.getElementById("user").value = username;
     } else {
-        errorMessage.style.display = "block";
+        errorMessage.style.display = 'block';
         document.getElementById("user").focus();
         document.getElementById("user").value = "";
     }
 }
 
-checkUsername();
 
 document.getElementById("user").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
@@ -76,6 +74,60 @@ const beginnerQuestions = [
             { text: "Angry", correct: false },
             { text: "Tired", correct: false }
         ]
+    },
+    {
+        question: 'What is the opposite of "hot"?',
+        answers: [
+            { text: 'Cold', correct: true },
+            { text: 'Big', correct: false },
+            { text: 'Happy', correct: false },
+            { text: 'Fast', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is a verb?',
+        answers: [
+            { text: 'Chair', correct: false },
+            { text: 'Run', correct: true },
+            { text: 'Blue', correct: false },
+            { text: 'Table', correct: false },
+        ]
+    },
+    {
+        question: 'What is the plural form of "cat"?',
+        answers: [
+            { text: 'Cats', correct: true },
+            { text: 'Dog', correct: false },
+            { text: 'Sheep', correct: false },
+            { text: 'Mouse', correct: false },
+        ]
+    },
+    {
+        question: 'Which word means the opposite of "old"?',
+        answers: [
+            { text: 'New', correct: true },
+            { text: 'Tall', correct: false },
+            { text: 'Small', correct: false },
+            { text: 'Happy', correct: false },
+        ]
+    },
+    {
+        question: 'What is the past tense of "eat"?',
+        answers: [
+            { text: 'Ate', correct: true },
+            { text: 'Eating', correct: false },
+            { text: 'Eaten', correct: false },
+            { text: 'Eats', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is an adjective?',
+        answers: [
+            { text: 'Sun', correct: false },
+            { text: 'Hot', correct: true },
+            { text: 'Run', correct: false },
+            { text: 'Happy', correct: false },
+        ]
     }
 ];
 
@@ -115,7 +167,62 @@ const intermediateQuestions = [
             { text: "In", correct: false },
             { text: "With", correct: false }
         ]
+    },
+    {
+        question: 'Which word is an adverb?',
+        answers: [
+            { text: 'Quickly', correct: true },
+            { text: 'House', correct: false },
+            { text: 'Jumped', correct: false },
+            { text: 'Beautiful', correct: false },
+        ]
+    },
+    {
+        question: 'Choose the correct synonym for "happy".',
+        answers: [
+            { text: 'Sad', correct: false },
+            { text: 'Joyful', correct: true },
+            { text: 'Angry', correct: false },
+            { text: 'Tired', correct: false },
+        ]
+    },
+    {
+        question: 'Which of the following is an example of an indefinite pronoun?',
+        answers: [
+            { text: 'He', correct: false },
+            { text: 'They', correct: false },
+            { text: 'Everyone', correct: true },
+            { text: 'My', correct: false },
+        ]
+    },
+    {
+        question: 'What is the correct past participle of the verb "swim"?',
+        answers: [
+            { text: 'Swam', correct: false },
+            { text: 'Swum', correct: true },
+            { text: 'Swimmed', correct: false },
+            { text: 'Swimming', correct: false },
+        ]
+    },
+    {
+        question: 'Identify the correct spelling.',
+        answers: [
+            { text: 'Recieve', correct: false },
+            { text: 'Receive', correct: true },
+            { text: 'Recievee', correct: false },
+            { text: 'Receave', correct: false },
+        ]
+    },
+    {
+        question: 'Which of the following is a subordinating conjunction?',
+        answers: [
+            { text: 'And', correct: false },
+            { text: 'But', correct: false },
+            { text: 'Although', correct: true },
+            { text: 'Or', correct: false },
+        ]
     }
+
 ];
 
 const advancedQuestions = [
@@ -154,6 +261,60 @@ const advancedQuestions = [
             { text: "Datums", correct: false },
             { text: "Datae", correct: false }
         ]
+    },
+    {
+        question: 'What is the correct plural form of "ox"?',
+        answers: [
+            { text: 'Oxen', correct: true },
+            { text: 'Oxes', correct: false },
+            { text: 'Oxies', correct: false },
+            { text: 'Oxs', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is a synonym for "generous"?',
+        answers: [
+            { text: 'Stingy', correct: false },
+            { text: 'Kind', correct: true },
+            { text: 'Rude', correct: false },
+            { text: 'Lazy', correct: false },
+        ]
+    },
+    {
+        question: 'What is the superlative form of "good"?',
+        answers: [
+            { text: 'Better', correct: false },
+            { text: 'Best', correct: true },
+            { text: 'Gooder', correct: false },
+            { text: 'Goodest', correct: false },
+        ]
+    },
+    {
+        question: 'Which word is an adverb?',
+        answers: [
+            { text: 'Quickly', correct: true },
+            { text: 'House', correct: false },
+            { text: 'Jumped', correct: false },
+            { text: 'Beautiful', correct: false },
+        ]
+    },
+    {
+        question: 'Choose the correct synonym for "happy".',
+        answers: [
+            { text: 'Sad', correct: false },
+            { text: 'Joyful', correct: true },
+            { text: 'Angry', correct: false },
+            { text: 'Tired', correct: false },
+        ]
+    },
+    {
+        question: 'What is the opposite of "strong"?',
+        answers: [
+            { text: 'Weak', correct: true },
+            { text: 'Powerful', correct: false },
+            { text: 'Brave', correct: false },
+            { text: 'Fast', correct: false },
+        ]
     }
 ];
 
@@ -171,165 +332,140 @@ levelButtons.forEach(button => {
 });
 handleLevelButtonClick();
 
+let difficulty
+
 function handleButtonClick(event) {
     const selectedButton = event.target;
     const selectedButtonId = selectedButton.id;
     console.log("Button selected:", selectedButtonId);
-
+    let currentQA
     if (selectedButtonId === 'beginner-btn') {
+        difficulty = "beginner"
+        currentQA = beginnerQuestions[currentQuestionIndex]
+        levelQuestions = beginnerQuestions
         // Display beginner level questions
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
         console.log('Displaying beginner questions');
     } else if (selectedButtonId === 'intermediate-btn') {
+        difficulty = "intermediate"
+        currentQA = intermediateQuestions[currentQuestionIndex]
+        levelQuestions = intermediateQuestions
         // Display intermediate level questions
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
         console.log('Displaying intermediate questions');
     } else if (selectedButtonId === 'advanced-btn') {
+        difficulty = "advanced"
+        levelQuestions = advancedQuestions
         // Display advanced level questions
-        chooseLevelScreen.style.display = "none";
-        questionContainer.style.display = "block";
         console.log('Displaying advanced questions');
     }
+
+
+    chooseLevelScreen.style.display = "none";
+    questionContainer.style.display = "block";
+
+    startLevel()
 }
 
 difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
 difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
 difficultyAdvancedBtn.addEventListener('click', handleButtonClick);
 
-function showQuestions(level) {
-    let selectedQuestions;
 
-    if (level === 'beginner') {
-        selectedQuestions = beginnerQuestions;
-    } else if (level === 'intermediate') {
-        selectedQuestions = intermediateQuestions;
-    } else if (level === 'advanced') {
-        selectedQuestions = advancedQuestions;
-    }
+let levelQuestions, currentQuestionIndex
 
-    questionContainer.innerHTML = '';
-    questionContainer.style.display = 'block';
-
-    selectedQuestions.forEach((questionObj) => {
-        const questionElement = document.createElement('div');
-        questionElement.classList.add('question');
-        questionElement.innerText = questionObj.question;
-
-        const answersElement = document.createElement('div');
-        answersElement.classList.add('answers');
-
-        questionObj.answers.forEach((answer) => {
-            const answerButton = document.createElement('button');
-            answerButton.innerText = answer.text;
-            answerButton.classList.add('btn');
-            answerButton.addEventListener('click', () => handleAnswer(answer.correct));
-
-            answersElement.appendChild(answerButton);
-        });
-
-        questionElement.appendChild(answersElement);
-        questionContainer.appendChild(questionElement);
-    });
-}
-
-function handleBeginnerButtonClick() {
-    chooseLevelScreen.style.display = 'none';
-    showQuestions('beginner');
-}
-
-function handleIntermediateButtonClick() {
-    chooseLevelScreen.style.display = 'none';
-    showQuestions('intermediate');
-}
-
-function handleAdvancedButtonClick() {
-    chooseLevelScreen.style.display = 'none';
-    showQuestions('advanced');
-}
-
-const beginnerButton = document.getElementById('beginner-btn');
-const intermediateButton = document.getElementById('intermediate-btn');
-const advancedButton = document.getElementById('advanced-btn');
-
-beginnerButton.addEventListener('click', handleBeginnerButtonClick);
-intermediateButton.addEventListener('click', handleIntermediateButtonClick);
-advancedButton.addEventListener('click', handleAdvancedButtonClick);
-
-
-//Questions
-
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-});
+    currentQuestionIndex++
+    if (levelQuestions.length <= currentQuestionIndex) {
+        console.log("hola");
+        console.log(nextButton.classList);
+        nextButton.style.display = "none";
+        startButton.style.display = "none";
+        questionElement.style.display = "none";
+        answerButtonsElement.style.display = "none";
+        scoreMessage.classList.remove('hide');
+        scoreMessage.style.display = "block";
+        document.getElementById('final-score').innerText = correctCounter;
+        document.getElementById('score-area').style.display = 'none';
+        document.getElementById('question-box').style.display = 'none';
+        console.log(scoreMessage);
+        return;
+    }
+    setNextQuestion()
+})
+
+function startLevel() {
+    currentQuestionIndex = 0
+    correctCounter = 0
+    wrongCounter = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+}
 
 function startGame() {
-    startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-    questionContainerElement.classList.remove('hide');
-    chooseLevelScreen.style.display = "none";
-    questionContainer.style.display = "block";
-    shuffledQuestions = shuffleQuestions(selectedLevel);
-    displayQuestion();
-    setNextQuestion();
+    startButton.classList.add('hide')
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
 }
 
 function setNextQuestion() {
-    resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    resetState()
+    showQuestion(levelQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question;
+    questionElement.innerText = question.question
     question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
         if (answer.correct) {
-            button.dataset.correct = answer.correct;
+            button.dataset.correct = answer.correct
         }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-    });
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
 }
 
 function resetState() {
-    clearStatusClass(document.body);
-    nextButton.classList.add('hide');
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
 
+let correctCounter, wrongCounter
 function selectAnswer(e) {
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(document.body, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    if (correct) {
+        correctCounter++
+        document.getElementById('score').innerText = correctCounter
     }
+    else {
+        wrongCounter++
+        document.getElementById('incorrect').innerText = wrongCounter
+    }
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    //startButton.innerText = 'Restart'
+    //startButton.classList.remove('hide')
+
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element);
+    clearStatusClass(element)
     if (correct) {
-        element.classList.add('correct');
+        element.classList.add('correct')
     } else {
-        element.classList.add('wrong');
+        element.classList.add('wrong')
     }
 }
 
 function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }

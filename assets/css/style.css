@@ -28,6 +28,10 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
+#error-message{
+    display: none;
+}
+
 /* Style for message when no user input & correct answer when not guessed */
 .user-log-error {
     display: none;
@@ -119,8 +123,19 @@ body {
     padding: 25px;
 }
 
-/* --------- Buttons */
+.hide {
+    display: none;
+}
 
+/*Buttons*/
+#next-btn{
+    display: inline;
+    margin-left: 10px;
+}
+#start-btn{
+    display: inline;
+    margin-left: 10px;
+}
 .btn {
     width: 220px;
     height: 60px;
@@ -132,7 +147,7 @@ body {
     gap: 5px;
     border-radius: 5px;
     /*wait for visual effects for border radius*/
-    color: rgb(112, 112, 234);
+    color: #445361;
 }
 
 .btn:focus {
@@ -171,6 +186,24 @@ body {
     background-color: #0d1013;
 }
 
+/*Footer*/
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(169, 246, 255);
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-left img {
+    width: 20px;
+    height: 20px;
+  }
+
+.footer .container {
+    max-width: 960px;
+    margin: 0 auto;
+}
 
 /* --------- Media queries */
 
@@ -230,26 +263,31 @@ body {
     }
 }
 
+.correct {
+    background-color: rgb(184, 255, 184);
+}
+
+.wrong {
+    background-color: rgb(251, 170, 170);
+}
+
+.white-text {
+    color: white;
+}
+
 /*Footer*/
-.footer {
-    position: fixed;
+footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: rgb(169, 246, 255);
     padding: 20px 0;
     text-align: center;
-    display: none;
 }
 
 .footer .container {
     max-width: 960px;
     margin: 0 auto;
-}
-
-/* Show the footer when the user scrolls down */
-.show-footer {
-    display: none;
 }
 
 @media (max-width: 320px) {
