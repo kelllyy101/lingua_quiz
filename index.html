@@ -28,20 +28,20 @@
                 <h3>Please enter your name</h3>
             </label>
             <br>
-            <input type="text" id="user" name="user" maxlength=12>
+            <input type="text" id="user" name="user" class="username-input" maxlength=12 autofocus="autofocus">
         </div>
 
-        <button class="button" id="user-log">Let's Practice!</button>
+        <button class="button-level" id="user-log">Let's Practice!</button>
 
         <p class="user-log-error" id="error-message">
-            Please try again. <br>Username must be at least 1 characters.
+            Please try again. <br>Username must be at least 1 character.
         </p>
     </div>
 
     <!-- Page offering different English levels -->
     <div class="user-input2" id="choose-level-screen">
         <h3>Choose your level</h3>
-        <p>${username}, click on one! </p>
+        <p id="username">${username}, </p>
         <div id="level-buttons">
             <!-- Buttons to select game level -->
             <button data-type="beginner" id="beginner-btn" class="button-level" type="button">Beginner</button>
@@ -62,8 +62,8 @@
             </div>
         </div>
         <div class="controls">
-            <button id="start-btn" class="start-btn btn">Restart</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="start-btn" class="start-btn">Restart</button>
+            <button id="next-btn" class="next-btn">Next</button>
         </div>
     </div>
 

@@ -28,14 +28,14 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
-#error-message{
+#error-message {
     display: none;
 }
 
 /* Style for message when no user input & correct answer when not guessed */
 .user-log-error {
     display: none;
-    font-size: 60%;
+    font-size: 75%;
     color: rgb(244, 33, 33);
     padding-top: 1.2rem;
     padding: 1.2rem 0.5rem 0;
@@ -126,16 +126,25 @@ body {
 .hide {
     display: none;
 }
-
+/*Username input*/
+.username-input{
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 /*Buttons*/
-#next-btn{
-    display: inline;
-    margin-left: 10px;
+.button-level{
+    background-color: rgb(205, 244, 248);
+    color: #445361;
+    width: 220px;
+    height: 60px;
+    border-radius: 5px;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+    margin-left: 20px
 }
-#start-btn{
-    display: inline;
-    margin-left: 10px;
-}
+
 .btn {
     width: 220px;
     height: 60px;
@@ -154,36 +163,31 @@ body {
     outline: none;
 }
 
-.btn--big {
-    padding-top: 10px;
-    border-radius: 50%;
-    background-color: white;
-    border: 10px solid;
-    width: 100px;
-    height: 100px;
-    font-size: 3.2rem;
-    margin: 0 30px;
-    transition: all 0.5s;
+#next-btn {
+    display: inline;
+    margin-left: 10px;
 }
 
-.btn--big::after {
-    content: attr(data-type);
-    font-size: 1rem;
+#start-btn {
+    display: inline;
+    margin-left: 10px;
+}
+
+.start-btn,
+.next-btn {
+    pointer-events: auto !important;
+    cursor: pointer;
+    width: 220px;
+    height: 60px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: white;
+    margin: 10px;
+    gap: 5px;
+    border-radius: 5px;
+    /*wait for visual effects for border radius*/
     color: #445361;
-    position: relative;
-    left: -0.5em;
-}
-
-.btn--gray {
-    margin-top: 25px;
-    background-color: #3c4956;
-    border: 1px transparent;
-    border-radius: 20px;
-}
-
-.btn--gray:active,
-.btn--gray:hover {
-    background-color: #0d1013;
 }
 
 /*Footer*/
@@ -195,36 +199,24 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
 .footer-left img {
     width: 20px;
     height: 20px;
-  }
+}
 
 .footer .container {
     max-width: 960px;
     margin: 0 auto;
 }
 
-/* --------- Media queries */
+/* Media queries */
 
 @media (max-width: 414px) {
     .controls-area {
         width: 100%;
     }
 
-    .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .btn--big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
-    }
 
     .question-area {
         padding: 10% 0;
@@ -265,10 +257,12 @@ footer {
 
 .correct {
     background-color: rgb(184, 255, 184);
+    pointer-events: none;
 }
 
 .wrong {
     background-color: rgb(251, 170, 170);
+    pointer-events: none;
 }
 
 .white-text {
@@ -291,6 +285,22 @@ footer {
 }
 
 @media (max-width: 320px) {
+    .username-input{
+        width: 130px;
+        height: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .button-level{
+        background-color: rgb(205, 244, 248);
+        color: #445361;
+        width: 180px;
+        height: 60px;
+        border-radius: 5px;
+        letter-spacing: 1.2px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
     .game-area {
         height: 70vh;
     }
@@ -298,10 +308,6 @@ footer {
     .controls-area {
         width: 75%;
         margin: 10px auto;
-    }
-
-    .btn--big {
-        margin: 10px 10px;
     }
 
     .question-area {
