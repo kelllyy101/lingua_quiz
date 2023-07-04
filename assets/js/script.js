@@ -12,6 +12,9 @@ const difficultyAdvancedBtn = document.getElementById('advanced-btn');
 const questionContainer = document.getElementById('question-box');
 const questionContainerElement = document.getElementById('question-container');
 const scoreMessage = document.getElementById('score-message');
+let timeLeft = document.querySelector(".time-left");
+let count = 10;
+let countdown;
 // Function to handle user log button click
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
@@ -377,6 +380,8 @@ nextButton.addEventListener('click', () => {
         return;
     }
     setNextQuestion()
+    clearInterval(countdown);
+    timerDisplay();
 })
 
 function startLevel() {
@@ -385,8 +390,25 @@ function startLevel() {
     wrongCounter = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
+    clearInterval(countdown);
+    timerDisplay();
 }
-
+//Timer
+function stopTimer() {
+    clearInterval(timer);
+}
+const timerDisplay = () => {
+    countdown = setInterval(() => {
+        count--;
+        timeLeft.innerHTML = `${count}s`;
+        if (count === 0) {
+            stopTimer()
+            startLevel();
+            correctCounter = 0;
+            wrongCounter = 0;
+        }
+    }, 1000);
+};
 function startGame() {
     startButton.classList.add('hide')
     currentQuestionIndex = 0
@@ -422,7 +444,13 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
-}
+    const options = questionElement.querySelectorAll('.btn');
+    options.forEach(option => {
+        option.disabled = true;
+    });
+    count = 10
+};
+
 
 function resetState() {
     clearStatusClass(document.body)
@@ -430,6 +458,7 @@ function resetState() {
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
+    count = 10
 }
 
 let correctCounter, wrongCounter

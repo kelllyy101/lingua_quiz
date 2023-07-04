@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Learn English, English Quiz, Test your knowledge, Beginners English, Intermediate English and Avanced" />
+    <meta name="keywords"
+        content="Learn English, English Quiz, Test your knowledge, Beginners English, Intermediate English and Avanced" />
     <!-- font awesome and google fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -13,31 +13,24 @@
     <title>LinguaQuiz</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 </head>
-
 <body>
     <h1 class="heading">
         <img class="logo" src="assets/images/logo-for-the-language-of-tourism-vector-10776661.webp" alt="logo">
         LinguaQuiz: <br>Elevate Your English
     </h1>
-
     <!-- Main screen of game and name input -->
     <div class="user-input1" id="mainLoginScreen">
 
         <div>
-            <label for="user">
-                <h3>Please enter your name</h3>
-            </label>
+                <p>Please enter your name<p>
             <br>
             <input type="text" id="user" name="user" class="username-input" maxlength=12 autofocus="autofocus">
         </div>
-
         <button class="button-level" id="user-log">Let's Practice!</button>
-
         <p class="user-log-error" id="error-message">
             Please try again. <br>Username must be at least 1 character.
         </p>
     </div>
-
     <!-- Page offering different English levels -->
     <div class="user-input2" id="choose-level-screen">
         <h3>Choose your level</h3>
@@ -50,10 +43,14 @@
             <button data-type="advanced" id="advanced-btn" class="button-level" type="button">Advanced</button>
         </div>
     </div>
-
     <div id="question-box" class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
+            <div id="timer-container">
+                <div id="timer"><img src="assets/images/timericon.webp" alt="Timer" width="20" />
+                    <span class="time-left">10s</span>
+                </div>
+            </div>
             <div id="answer-buttons" class="btn-grid">
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
@@ -66,7 +63,6 @@
             <button id="next-btn" class="next-btn">Next</button>
         </div>
     </div>
-
     <div id="score-area" class="score-area">
         <p class="scores">Correct Answers <span id="score">0</span></p>
         <p class="scores">Incorrect Answers <span id="incorrect">0</span></p>
@@ -77,7 +73,6 @@
             <h3>Your score is <span id="final-score"></span> out of 10.</h3>
         </div>
     </div>
-
     <footer class="footer">
         <div class="footer-left">
             <a href="https://github.com/kelllyy101" target="_blank">
@@ -91,11 +86,9 @@
             <p>&copy; 2023 LinguaQuiz. All rights reserved.</p>
         </div>
     </footer>
-
     <noscript>
         Your browser does not support JavaScript!
     </noscript>
     <script src="assets/js/script.js"></script>
 </body>
-
 </html>
