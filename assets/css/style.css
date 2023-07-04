@@ -17,6 +17,7 @@ body {
 .logo {
     height: 60px;
     padding-right: 5px;
+    border-radius: 50%;
 }
 
 /* Main Game layout */
