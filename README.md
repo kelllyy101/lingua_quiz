@@ -97,6 +97,16 @@ Features that could be added in the future:
 - Interactive quizzes with multimedia elements
 - Sound effects for right and wrong answers
 
+![](./assets/screenshots/Captura%20de%20pantalla%20(511).png)
+
+![](./assets/screenshots/Captura%20de%20pantalla%20(522).png)
+
+![](./assets/screenshots/Captura%20de%20pantalla%20(523).png)
+
+![](./assets/screenshots/Captura%20de%20pantalla%20(525).png)
+
+![](./assets/screenshots/Captura%20de%20pantalla%20(526).png)
+
 ## Testing
 
 ### Testing during Development
@@ -112,6 +122,8 @@ Responsive Testing: The responsive design of the quiz was thoroughly tested to e
 Validation Testing: The HTML and CSS code was validated using appropriate tools such as W3C Markup Validation Service and CSS validators. This validation process helped identify and rectify any syntax errors, ensuring compliance with web standards and enhancing the overall quality of the codebase.
 
 By employing these testing methods, the development team aimed to identify and resolve any issues or bugs early on, ensuring a robust and reliable English learning quiz. This iterative testing approach contributed to the overall stability and functionality of the quiz, resulting in an enhanced user experience.
+
+![](./assets/screenshots/Captura%20de%20pantalla%20(513).png)
 
 ### Feature Testing
 
