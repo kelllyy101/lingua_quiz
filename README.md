@@ -185,7 +185,7 @@ Initially, the quiz would not advance to the next question even if the user answ
 
 ### Unfixed Bugs
 
-- When user does not answer a question, they have to restart the whole level of the quiz, losing their accumulated scores, although they will not visually return to zero. The scores will be recounted from zero as soon as the user chooses an answer, and will continue until 10.
+- Each time the user presses restart the timer will keep counting down the seconds faster and faster. 
 
 ### Other Known Bugs
 

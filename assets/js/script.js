@@ -379,9 +379,8 @@ nextButton.addEventListener('click', () => {
         document.getElementById('question-box').style.display = 'none';
         return;
     }
+    stopTimer();
     setNextQuestion()
-    clearInterval(countdown);
-    timerDisplay();
 })
 
 function startLevel() {
@@ -390,25 +389,24 @@ function startLevel() {
     wrongCounter = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
-    clearInterval(countdown);
-    timerDisplay();
 }
+
 //Timer
 function stopTimer() {
-    clearInterval(timer);
+    clearInterval(countdown);
 }
-const timerDisplay = () => {
+
+function displayTimer() {
     countdown = setInterval(() => {
         count--;
         timeLeft.innerHTML = `${count}s`;
         if (count === 0) {
-            stopTimer()
-            startLevel();
-            correctCounter = 0;
-            wrongCounter = 0;
+            stopTimer();
+            startGame();
         }
     }, 1000);
-};
+}
+
 function startGame() {
     startButton.classList.add('hide')
     currentQuestionIndex = 0
@@ -442,13 +440,14 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', stopTimer)
         answerButtonsElement.appendChild(button)
     })
     const options = questionElement.querySelectorAll('.btn');
     options.forEach(option => {
         option.disabled = true;
     });
-    count = 10
+    displayTimer();
 };
 
 
