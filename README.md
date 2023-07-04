@@ -25,7 +25,7 @@ The project aims to help individuals improve their English language skills throu
 
 ### Target Audience
 
-The target audience for LinguaQuiz includes English language learners of all ages and backgrounds who want to enhance their grammar and vocabulary skills. It caters to beginners who are just starting to learn English, as well as intermediate and advanced learners seeking to expand their knowledge.
+The target audience for LinguaQuiz includes English language learners of all ages and backgrounds who want to enhance their grammar and vocabulary skills. It caters to beginners who are just starting to learn English, as well as intermediate and advanced learners seeking to expand their knowledge. The friendly colour design and easy layout makes it easier for all ages, all levels of English and all levels of technology to access.
 
 ### Learning Goals
 
@@ -88,12 +88,14 @@ The chosen font for the LinguaQuiz website is "Open Sans" from Google Fonts. It 
 - Navigation bar for easy access to different sections of the website
 - Links to quizzes for beginners, intermediate, and advanced levels
 - Fill-in form to create user accounts
-- Footer section providing additional information and links
-- Future features could include:
+- Time to test their knowledge even quicker (if they don't answer, questions will be restarted and all scores lost)
+- Footer section providing additional information and links to GitHub
+- Contact form in footer section to provide any comments about LinguaQuiz
 Features that could be added in the future:
 - User profiles to track progress
 - Leaderboards to compare scores
 - Interactive quizzes with multimedia elements
+- Sound effects for right and wrong answers
 
 ## Testing
 
@@ -170,19 +172,28 @@ By manually going through each quiz and answering the questions, the development
 
 ### Fixed Bugs
 
-- Document any bugs encountered during testing and note the steps taken to fix them
+- During the development of my JavaScript quiz, I encountered and addressed several bugs to improve the functionality and user experience. The following are the key issues I fixed:
+
+1. Changing colors for the right and wrong answer:
+One of the bugs I encountered was the incorrect display of colors for right and wrong answers. To fix this, I modified the JavaScript code responsible for highlighting the answers. Now, when a user selects the correct answer, it is appropriately marked green, indicating their success. Similarly, when a user selects the wrong answer, it is visually differentiated with red, providing immediate feedback.
+
+2. Negative numbers in the timer:
+Another bug that I resolved was the timer showing negative numbers. Initially, the timer would continue counting down beyond zero and display negative values. To rectify this issue, I added a condition in the JavaScript code that ensures the timer stops at zero, preventing negative numbers from being displayed. This improvement ensures accurate and positive time representation for users taking the quiz and the timer is reset to 10 every time the user moves on to a new question.
+
+3. Pause on the first question:
+Initially, the quiz would not advance to the next question even if the user answers the first question. To enhance the user experience, I implemented a pause functionality on the first question. Now, when the quiz is loaded, it pauses on the first question, allowing users to carefully read and consider their response before proceeding to the next question. This change ensures users have adequate time to interact with each question and provides a more intuitive quiz experience.
 
 ### Unfixed Bugs
 
-- Document any unresolved bugs or issues that require further investigation or development
+- When user does not answer a question, they have to restart the whole level of the quiz, losing their accumulated scores, although they will not visually return to zero. The scores will be recounted from zero as soon as the user chooses an answer, and will continue until 10.
 
 ### Other Known Bugs
 
-- Document any known bugs that have not been addressed yet
+- No other known bugs.
 
 ## Deployment
 
-- Deploy the LinguaQuiz website to a hosting platform or server
+- Deploy the LinguaQuiz website to GitHub
 - Set up appropriate domain and hosting configurations
 
 ## Languages
@@ -203,13 +214,13 @@ The development of this English learning quiz project was made possible with the
 
 CodePen (codepen.io): CodePen provided inspiration and ideas for implementing certain features and design elements.
 
-Web Dev Simplified (YouTube channel): Web Dev Simplified's informative tutorials and videos helped in understanding and implementing certain concepts and techniques.
+Web Dev Simplified (YouTube channel): Web Dev Simplified's informative tutorials and videos helped in understanding and implementing certain concepts and techniques, especially in terms of layout.
 
 W3Schools (w3schools.com): W3Schools served as a valuable reference for HTML, CSS, and JavaScript, providing guidance and examples for different aspects of web development.
 
 SitePoint (sitepoint.com): The article titled "Simple JavaScript Quiz" on SitePoint provided insights and inspiration for the quiz functionality and structure.
 
-CodingTorque (codingtorque.com): The tutorial on "Building a Quiz App using JavaScript" on CodingTorque served as a helpful resource for understanding the process of creating a quiz application.
+CodingTorque (codingtorque.com): The tutorial on "Building a Quiz App using JavaScript" on CodingTorque served as a helpful resource for understanding the process of creating a quiz application, the timer section was particularly useful.
 
 Various online forums and communities: Contributions and discussions from the web development community on platforms like Stack Overflow, Reddit, and GitHub provided valuable insights and solutions to specific challenges encountered during the development process.
 
