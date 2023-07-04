@@ -17,6 +17,7 @@ body {
 .logo {
     height: 60px;
     padding-right: 5px;
+    border-radius: 50%;
 }
 
 p {
@@ -195,12 +196,7 @@ p {
     color: #445361;
 }
 /*Timer*/
-#timer-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 8rem;
-  }
+
 #timer {
     font-size: 20px;
     font-weight: bold;
