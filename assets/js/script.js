@@ -407,6 +407,7 @@ function startGame() {
 function setNextQuestion() {
     resetState()
     showQuestion(levelQuestions[currentQuestionIndex])
+    nextButton.disabled = true;
 }
 
 function showQuestion(question) {
@@ -446,7 +447,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-
+    nextButton.disabled = false;
 }
 
 function setStatusClass(element, correct) {
