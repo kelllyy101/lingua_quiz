@@ -35,7 +35,7 @@ body {
 /* Style for message when no user input & correct answer when not guessed */
 .user-log-error {
     display: none;
-    font-size: 60%;
+    font-size: 75%;
     color: rgb(244, 33, 33);
     padding-top: 1.2rem;
     padding: 1.2rem 0.5rem 0;
@@ -141,6 +141,8 @@ body {
     height: 60px;
     border-radius: 5px;
     letter-spacing: 1.2px;
+    margin-bottom: 20px;
+    margin-left: 20px
 }
 
 .btn {
@@ -215,19 +217,6 @@ footer {
         width: 100%;
     }
 
-    .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .btn--big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
-    }
 
     .question-area {
         padding: 10% 0;
@@ -296,6 +285,22 @@ footer {
 }
 
 @media (max-width: 320px) {
+    .username-input{
+        width: 130px;
+        height: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .button-level{
+        background-color: rgb(205, 244, 248);
+        color: #445361;
+        width: 180px;
+        height: 60px;
+        border-radius: 5px;
+        letter-spacing: 1.2px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
     .game-area {
         height: 70vh;
     }
@@ -303,10 +308,6 @@ footer {
     .controls-area {
         width: 75%;
         margin: 10px auto;
-    }
-
-    .btn--big {
-        margin: 10px 10px;
     }
 
     .question-area {
