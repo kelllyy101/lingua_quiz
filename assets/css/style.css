@@ -189,7 +189,18 @@ body {
     /*wait for visual effects for border radius*/
     color: #445361;
 }
-
+/*Timer*/
+#timer-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 8rem;
+  }
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #445361;
+  }
 /*Footer*/
 footer {
     bottom: 0;
@@ -236,9 +247,6 @@ footer {
         margin: 0 auto;
     }
 
-    .btn--gray {
-        margin-top: 0;
-    }
 
     .score-area {
         width: 100%;
@@ -286,7 +294,7 @@ footer {
 
 @media (max-width: 320px) {
     .username-input{
-        width: 130px;
+        width: 100px;
         height: 15px;
         border-radius: 5px;
         margin-bottom: 10px;
@@ -294,8 +302,8 @@ footer {
     .button-level{
         background-color: rgb(205, 244, 248);
         color: #445361;
-        width: 180px;
-        height: 60px;
+        width: 10px;
+        height: 30px;
         border-radius: 5px;
         letter-spacing: 1.2px;
         margin-bottom: 10px;
