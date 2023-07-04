@@ -18,6 +18,9 @@ document.getElementById("user-log").addEventListener("click", checkUsername);
 function checkUsername() {
     let username = document.getElementById("user").value.trim();
     let errorMessage = document.getElementById("error-message");
+    let chooseDifficulty = document.getElementById("username");
+    chooseDifficulty.innerText = `${username}, are you ready to learn English?`;
+    console.log(username);
 
     if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
@@ -436,11 +439,9 @@ function selectAnswer(e) {
         wrongCounter++
         document.getElementById('incorrect').innerText = wrongCounter
     }
-    setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-
 
 }
 

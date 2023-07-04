@@ -28,7 +28,7 @@ body {
     box-shadow: 0 0 10px 2px;
 }
 
-#error-message{
+#error-message {
     display: none;
 }
 
@@ -128,14 +128,16 @@ body {
 }
 
 /*Buttons*/
-#next-btn{
+#next-btn {
     display: inline;
     margin-left: 10px;
 }
-#start-btn{
+
+#start-btn {
     display: inline;
     margin-left: 10px;
 }
+
 .btn {
     width: 220px;
     height: 60px;
@@ -186,6 +188,23 @@ body {
     background-color: #0d1013;
 }
 
+.start-btn,
+.next-btn {
+    pointer-events: auto !important;
+    cursor: pointer;
+    width: 220px;
+    height: 60px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: white;
+    margin: 10px;
+    gap: 5px;
+    border-radius: 5px;
+    /*wait for visual effects for border radius*/
+    color: #445361;
+}
+
 /*Footer*/
 footer {
     bottom: 0;
@@ -195,10 +214,11 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+
 .footer-left img {
     width: 20px;
     height: 20px;
-  }
+}
 
 .footer .container {
     max-width: 960px;
@@ -265,10 +285,12 @@ footer {
 
 .correct {
     background-color: rgb(184, 255, 184);
+    pointer-events: none;
 }
 
 .wrong {
     background-color: rgb(251, 170, 170);
+    pointer-events: none;
 }
 
 .white-text {
