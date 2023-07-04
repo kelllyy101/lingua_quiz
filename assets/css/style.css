@@ -19,6 +19,11 @@ body {
     padding-right: 5px;
 }
 
+p {
+    font-weight: bold;
+    font-size: large;
+}
+
 /* Main Game layout */
 .user-input1 {
     display: block;

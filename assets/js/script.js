@@ -396,7 +396,7 @@ function startLevel() {
 //Timer
 function stopTimer() {
     clearInterval(timer);
-  }
+}
 const timerDisplay = () => {
     countdown = setInterval(() => {
         count--;
@@ -404,6 +404,8 @@ const timerDisplay = () => {
         if (count === 0) {
             stopTimer()
             startLevel();
+            correctCounter = 0;
+            wrongCounter = 0;
         }
     }, 1000);
 };
