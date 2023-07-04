@@ -20,8 +20,6 @@ function checkUsername() {
     let errorMessage = document.getElementById("error-message");
     let chooseDifficulty = document.getElementById("username");
     chooseDifficulty.innerText = `${username}, are you ready to learn English?`;
-    console.log(username);
-
     if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         mainLoginScreen.style.display = "none";
@@ -352,18 +350,14 @@ function handleButtonClick(event) {
         difficulty = "advanced"
         levelQuestions = advancedQuestions
     }
-
-
     chooseLevelScreen.style.display = "none";
     questionContainer.style.display = "block";
-
     startLevel()
 }
 
 difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
 difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
 difficultyAdvancedBtn.addEventListener('click', handleButtonClick);
-
 
 let levelQuestions, currentQuestionIndex
 
