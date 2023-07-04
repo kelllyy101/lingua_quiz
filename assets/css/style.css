@@ -126,6 +126,15 @@ body {
 .hide {
     display: none;
 }
+
+/*Timer*/
+#timer-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 8rem;
+  }
+
 /*Username input*/
 .username-input{
     width: 260px;
@@ -313,5 +322,7 @@ footer {
     .question-area {
         padding: 10px 0;
     }
-
+    #timer-container {
+        width: 20vh;
+      }
 }
