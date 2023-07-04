@@ -390,7 +390,17 @@ function startLevel() {
 function startGame() {
     startButton.classList.add('hide')
     currentQuestionIndex = 0
+    score = 0; // Reset the score to zero
+    correctCounter = 0
+    wrongCounter = 0
     questionContainerElement.classList.remove('hide')
+    clearStatusClass(document.body);
+    nextButton.classList.add('hide');
+    document.getElementById('score').innerText = score;
+    document.getElementById('incorrect').innerText = score;
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
     setNextQuestion()
 }
 
