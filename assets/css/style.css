@@ -293,6 +293,60 @@ footer {
     margin: 0 auto;
 }
 
+/*Footer Links*/
+.footer-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-link:hover {
+    font-size: 1.1em;
+  }
+  .github-img{
+    transition: transform 0.2s;
+  }
+  .github-img:hover{
+    transform: scale(1.1);
+  }
+
+  /*Form*/
+  #contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  #contact-form h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #contact-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+
+  #contact-form input[type="submit"] {
+    background-color: rgb(169, 246, 255);
+    color: white;
+    cursor: pointer;
+  }
+
+  #contact-form input[type="submit"]:hover {
+    background-color: rgb(108, 227, 241);
+  }
+
 @media (max-width: 320px) {
     .username-input{
         width: 130px;
