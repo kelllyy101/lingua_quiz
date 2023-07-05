@@ -13,6 +13,8 @@
 - [Media and Credits](#media-and-credits)
 - [Thanks to](#thanks-to)
 
+![](./assets/screenshots/Captura%20de%20pantalla%20(526).png)
+
 ## Planning and Development
 
 ### Project Inspection
@@ -104,8 +106,6 @@ Features that could be added in the future:
 ![](./assets/screenshots/Captura%20de%20pantalla%20(523).png)
 
 ![](./assets/screenshots/Captura%20de%20pantalla%20(525).png)
-
-![](./assets/screenshots/Captura%20de%20pantalla%20(526).png)
 
 ## Testing
 
