@@ -123,7 +123,7 @@ Validation Testing: The HTML and CSS code was validated using appropriate tools 
 
 By employing these testing methods, the development team aimed to identify and resolve any issues or bugs early on, ensuring a robust and reliable English learning quiz. This iterative testing approach contributed to the overall stability and functionality of the quiz, resulting in an enhanced user experience.
 
-![](./assets/screenshots/Captura%20de%20pantalla%20(513).png)
+![](./assets/screenshots/Captura%20de%20pantalla%20(528).png)
 
 ### Feature Testing
 
@@ -156,13 +156,13 @@ Launch the quiz application on different devices and browsers to assess its comp
 
 Navigate to the quiz section and select a specific difficulty level (beginner, intermediate, or advanced).
 
-Read each question carefully and select the most appropriate answer.
+Read each question carefully and select the most appropriate answer out of four possibilites.
 
-Verify that the selected answer is visually highlighted or indicated to provide immediate feedback to the user.
+Verify that the selected answer visually changes colour, depending if the correct answer was selected or not, providing immediate feedback to the user.
 
-Progress through the quiz by clicking the "Next" button, ensuring that the application transitions smoothly to the next question.
+Progress through the quiz by clicking the "Next" button, only when the user selected an answer, ensuring that the application transitions smoothly to the next question.
 
-Test the "Previous" button functionality to confirm that it correctly navigates back to the previous question.
+Test the "Restart" button functionality to confirm that it correctly navigates back to the beginning of the quiz level, resetting the score to zero.
 
 Verify that the quiz correctly tracks the number of correct and incorrect answers.
 
@@ -170,9 +170,9 @@ Test the scoring system by intentionally answering questions correctly and incor
 
 Repeat the manual testing process for each difficulty level, thoroughly checking all the questions and answer options.
 
-Pay special attention to questions with complex answer choices or special instructions, ensuring they are correctly interpreted and graded.
+Pay special attention to questions with complex answer choices or special instructions, ensuring they are correctly interpreted and graded, especially in the advanced level.
 
-By manually going through each quiz and answering the questions, the development team meticulously assessed the correctness of the quiz functionality and scoring. This testing approach helped identify any issues or discrepancies, allowing for prompt resolution and the delivery of a reliable and accurate English learning quiz.
+By manually going through each quiz and answering the questions, I meticulously assessed the correctness of the quiz functionality and scoring. This testing approach helped identify any issues or discrepancies, allowing for prompt resolution and the delivery of a reliable and accurate English learning quiz for three different types of level.
 
 ### Validator Testing
 
@@ -224,17 +224,23 @@ Initially, the quiz would not advance to the next question even if the user answ
 
 The development of this English learning quiz project was made possible with the help of various resources and inspirations. The following sources were instrumental in the creation of this project:
 
-CodePen (codepen.io): CodePen provided inspiration and ideas for implementing certain features and design elements.
+- [Code Institute](https://codeinstitute.net/ie): For their videos and guidance, especially with JavaScript.
 
-Web Dev Simplified (YouTube channel): Web Dev Simplified's informative tutorials and videos helped in understanding and implementing certain concepts and techniques, especially in terms of layout.
+- [Code Academy](https://www.codecademy.com/): For basic concepts on Javascript.
 
-W3Schools (w3schools.com): W3Schools served as a valuable reference for HTML, CSS, and JavaScript, providing guidance and examples for different aspects of web development.
+- [Modzilla](https://developer.mozilla.org/es/): For many tutorials about Javascript.
 
-SitePoint (sitepoint.com): The article titled "Simple JavaScript Quiz" on SitePoint provided insights and inspiration for the quiz functionality and structure.
+- [CodePen](https://codepen.io/search/pens?q=animated+underline): CodePen provided inspiration and ideas for implementing certain features and design elements.
 
-CodingTorque (codingtorque.com): The tutorial on "Building a Quiz App using JavaScript" on CodingTorque served as a helpful resource for understanding the process of creating a quiz application, the timer section was particularly useful.
+- [w3s](https://www.w3schools.com/html/): W3Schools served as a valuable reference for HTML, CSS, and JavaScript, providing guidance and examples for different aspects of web development.
 
-Various online forums and communities: Contributions and discussions from the web development community on platforms like Stack Overflow, Reddit, and GitHub provided valuable insights and solutions to specific challenges encountered during the development process.
+- Web Dev Simplified (YouTube channel): Web Dev Simplified's informative tutorials and videos helped in understanding and implementing certain concepts and techniques, especially in terms of layout.
+
+- SitePoint (sitepoint.com): The article titled "Simple JavaScript Quiz" on SitePoint provided insights and inspiration for the quiz functionality and structure.
+
+- CodingTorque (codingtorque.com): The tutorial on "Building a Quiz App using JavaScript" on CodingTorque served as a helpful resource for understanding the process of creating a quiz application, the timer section was particularly useful.
+
+- Various online forums and communities: Contributions and discussions from the web development community on platforms like Stack Overflow, Reddit, and GitHub provided valuable insights and solutions to specific challenges encountered during the development process.
 
 ## Thanks to
 I would like to express my gratitude to Code Institute and my mentor for their exceptional web development curriculum and to my mentor for their invaluable guidance and support throughout this project. Thank you for providing the resources and expertise that have helped me grow as a developer.
