@@ -1,11 +1,9 @@
+/* jshint esversion: 6 */
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
-const userInputElement = document.getElementById('user');
-const userLogButton = document.getElementById('user-log');
 const chooseLevelScreen = document.getElementById('choose-level-screen');
-const levelButtons = document.querySelectorAll('button.button-level');
 const difficultyBeginnerBtn = document.getElementById('beginner-btn');
 const difficultyIntermediateBtn = document.getElementById('intermediate-btn');
 const difficultyAdvancedBtn = document.getElementById('advanced-btn');
@@ -25,7 +23,7 @@ function checkUsername() {
     chooseDifficulty.innerText = `${username}, are you ready to learn English?`;
     if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
-        mainLoginScreen.style.display = "none";
+        document.getElementById('mainLoginScreen').style.display = "none";
         errorMessage.style.display = "none";
         document.getElementById("user").value = username;
     } else {
@@ -322,51 +320,38 @@ const advancedQuestions = [
     }
 ];
 
-// Function to handle level button click
-function handleLevelButtonClick(e) {
-    const levelButtonsContainer = document.getElementById('level-buttons');
-    const selectedLevel = levelButtonsContainer.getElementsByClassName('button-level');
-};
-// Add event listener to user log button
-userLogButton.addEventListener('click', handleLevelButtonClick);
-// Add event listener to level buttons
-levelButtons.forEach(button => {
-    button.addEventListener('click', handleLevelButtonClick);
-});
-handleLevelButtonClick();
-
-let difficulty
+let difficulty;
 
 function handleButtonClick(event) {
     const selectedButton = event.target;
     const selectedButtonId = selectedButton.id;
-    let currentQA
+    let currentQA;
     if (selectedButtonId === 'beginner-btn') {
-        difficulty = "beginner"
-        currentQA = beginnerQuestions[currentQuestionIndex]
-        levelQuestions = beginnerQuestions
+        difficulty = "beginner";
+        currentQA = beginnerQuestions[currentQuestionIndex];
+        levelQuestions = beginnerQuestions;
     } else if (selectedButtonId === 'intermediate-btn') {
-        difficulty = "intermediate"
-        currentQA = intermediateQuestions[currentQuestionIndex]
-        levelQuestions = intermediateQuestions
+        difficulty = "intermediate";
+        currentQA = intermediateQuestions[currentQuestionIndex];
+        levelQuestions = intermediateQuestions;
     } else if (selectedButtonId === 'advanced-btn') {
-        difficulty = "advanced"
-        levelQuestions = advancedQuestions
+        difficulty = "advanced";
+        levelQuestions = advancedQuestions;
     }
     chooseLevelScreen.style.display = "none";
     questionContainer.style.display = "block";
-    startLevel()
+    startLevel();
 }
 
 difficultyBeginnerBtn.addEventListener('click', handleButtonClick);
 difficultyIntermediateBtn.addEventListener('click', handleButtonClick);
 difficultyAdvancedBtn.addEventListener('click', handleButtonClick);
 
-let levelQuestions, currentQuestionIndex
+let levelQuestions, currentQuestionIndex;
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
+    currentQuestionIndex++;
     if (levelQuestions.length <= currentQuestionIndex) {
         nextButton.style.display = "none";
         startButton.style.display = "none";
@@ -380,15 +365,15 @@ nextButton.addEventListener('click', () => {
         return;
     }
     stopTimer();
-    setNextQuestion()
-})
+    setNextQuestion();
+});
 
 function startLevel() {
-    currentQuestionIndex = 0
-    correctCounter = 0
-    wrongCounter = 0
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
+    currentQuestionIndex = 0;
+    correctCounter = 0;
+    wrongCounter = 0;
+    questionContainerElement.classList.remove('hide');
+    setNextQuestion();
 }
 
 //Timer
@@ -408,86 +393,85 @@ function displayTimer() {
 }
 
 function startGame() {
-    startButton.classList.add('hide')
-    currentQuestionIndex = 0
-    score = 0; // Reset the score to zero
-    correctCounter = 0
-    wrongCounter = 0
-    questionContainerElement.classList.remove('hide')
+    startButton.classList.add('hide');
+    currentQuestionIndex = 0;
+    correctCounter = 0;
+    wrongCounter = 0;
+    questionContainerElement.classList.remove('hide');
     clearStatusClass(document.body);
     nextButton.classList.add('hide');
-    document.getElementById('score').innerText = score;
-    document.getElementById('incorrect').innerText = score;
+    document.getElementById('score').innerText = 0;
+    document.getElementById('incorrect').innerText = 0;
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
-    setNextQuestion()
+    setNextQuestion();
 }
 
 function setNextQuestion() {
-    resetState()
-    showQuestion(levelQuestions[currentQuestionIndex])
+    resetState();
+    showQuestion(levelQuestions[currentQuestionIndex]);
     nextButton.disabled = true;
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer)
-        button.addEventListener('click', stopTimer)
-        answerButtonsElement.appendChild(button)
-    })
+        button.addEventListener('click', selectAnswer);
+        button.addEventListener('click', stopTimer);
+        answerButtonsElement.appendChild(button);
+    });
     const options = questionElement.querySelectorAll('.btn');
     options.forEach(option => {
         option.disabled = true;
     });
     displayTimer();
-};
+}
 
 
 function resetState() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
+    clearStatusClass(document.body);
+    nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
-    count = 10
+    count = 10;
 }
 
-let correctCounter, wrongCounter
+let correctCounter, wrongCounter;
 function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
     if (correct) {
-        correctCounter++
-        document.getElementById('score').innerText = correctCounter
+        correctCounter++;
+        document.getElementById('score').innerText = correctCounter;
     }
     else {
-        wrongCounter++
-        document.getElementById('incorrect').innerText = wrongCounter
+        wrongCounter++;
+        document.getElementById('incorrect').innerText = wrongCounter;
     }
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+        setStatusClass(button, button.dataset.correct);
+    });
     nextButton.disabled = false;
 }
 
 function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element);
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     }
 }
 
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
