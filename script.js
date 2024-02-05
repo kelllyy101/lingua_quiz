@@ -19,7 +19,7 @@ function checkUsername() {
     let username = document.getElementById("user").value.trim();
     let errorMessage = document.getElementById("error-message");
     let chooseDifficulty = document.getElementById("username");
-    chooseDifficulty.innerText = `${username}, are you ready to learn English?`;
+    chooseDifficulty.innerText = `${username}, are you ready to learn Spanish?`;
     if (username.length > 0 && username.length <= 12) {
         chooseLevelScreen.style.display = "block";
         document.getElementById('mainLoginScreen').style.display = "none";
