@@ -134,7 +134,7 @@ const beginnerQuestions = [
 
 const intermediateQuestions = [
     {
-        question: "Como se dice "I fell and my knee is sore"?",
+        question: "Como se dice 'I fell and my knee is sore'?",
         answers: [
             { text: "Fui y me duele el tobillo", correct: false },
             { text: "Me caí y me duele la rodilla", correct: true },
