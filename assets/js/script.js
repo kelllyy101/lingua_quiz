@@ -11,7 +11,7 @@ const questionContainer = document.getElementById('question-box');
 const questionContainerElement = document.getElementById('question-container');
 const scoreMessage = document.getElementById('score-message');
 let timeLeft = document.querySelector(".time-left");
-let count = 10;
+let count = 15;
 let countdown;
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
