@@ -11,7 +11,7 @@ const questionContainer = document.getElementById('question-box');
 const questionContainerElement = document.getElementById('question-container');
 const scoreMessage = document.getElementById('score-message');
 let timeLeft = document.querySelector(".time-left");
-let count = 15;
+let count = 10;
 let countdown;
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
@@ -391,7 +391,7 @@ function displayTimer() {
             stopTimer();
             startGame();
         }
-    }, 1000);
+    }, 1500);
 }
 
 function startGame() {
