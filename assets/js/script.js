@@ -13,7 +13,6 @@ const scoreMessage = document.getElementById('score-message');
 let timeLeft = document.querySelector(".time-left");
 let count = 10;
 let countdown;
-// Function to handle user log button click
 document.getElementById("user-log").addEventListener("click", checkUsername);
 
 function checkUsername() {
@@ -42,282 +41,285 @@ document.getElementById("user").addEventListener("keydown", function (event) {
 
 const beginnerQuestions = [
     {
-        question: "Which word is a noun?",
+        tion: "Como te llamas?",
         answers: [
-            { text: "Run", correct: false },
-            { text: "Jump", correct: false },
-            { text: "Apple", correct: true },
-            { text: "Quickly", correct: false }
+            { text: "Mi llamo es Ken", correct: false },
+            { text: "Mi nombre son Ken", correct: false },
+            { text: "Me llamo Ken", correct: true },
+            { text: "Me llamas Ken", correct: false }
         ]
     },
     {
-        question: "What is the plural form of 'child'?",
+        question: "Donde vives?",
         answers: [
-            { text: "Childs", correct: false },
-            { text: "Children", correct: true },
-            { text: "Childes", correct: false },
-            { text: "Childen", correct: false }
+            { text: "Vives en Cork", correct: false },
+            { text: "Vivo en Cork", correct: true },
+            { text: "Vivas en Cork", correct: false },
+            { text: "Viva en Cork", correct: false }
         ]
     },
     {
-        question: "Which sentence is grammatically correct?",
+        question: "Cuantos años tienes?",
         answers: [
-            { text: "I goed to the store yesterday.", correct: false },
-            { text: "She sings good.", correct: false },
-            { text: "They have been swimming in the lake.", correct: true },
-            { text: "He play soccer every day.", correct: false }
+            { text: "Tengo 58", correct: false },
+            { text: "Tienes 58 año", correct: false },
+            { text: "Tengo 58 años", correct: true },
+            { text: "Eu tengo 58 años", correct: false }
         ]
     },
     {
-        question: "Choose the synonym for 'happy'.",
+        question: "Como estas?.",
         answers: [
-            { text: "Sad", correct: false },
-            { text: "Joyful", correct: true },
-            { text: "Angry", correct: false },
-            { text: "Tired", correct: false }
+            { text: "Soy cansado", correct: false },
+            { text: "Estoy bien", correct: true },
+            { text: "Estas muy bien", correct: false },
+            { text: "Estamos mal", correct: false }
         ]
     },
     {
-        question: 'What is the opposite of "hot"?',
+        question: 'De donde eres?',
         answers: [
-            { text: 'Cold', correct: true },
-            { text: 'Big', correct: false },
-            { text: 'Happy', correct: false },
-            { text: 'Fast', correct: false },
+            { text: 'Soy de Irlanda', correct: true },
+            { text: 'Eres de Irlanda', correct: false },
+            { text: 'Estoy de Irlanda', correct: false },
+            { text: 'Ero de Irlanda', correct: false },
         ]
     },
     {
-        question: 'Which word is a verb?',
+        question: 'Estas casado? Tienes hijos?',
         answers: [
             { text: 'Chair', correct: false },
-            { text: 'Run', correct: true },
-            { text: 'Blue', correct: false },
-            { text: 'Table', correct: false },
+            { text: 'Estoy casado y tengo dos hijos', correct: true },
+            { text: 'Soy casado y tengo dos hijo', correct: false },
+            { text: 'Estoy casado y estoy padre de dos hijos', correct: false },
         ]
     },
     {
-        question: 'What is the plural form of "cat"?',
+        question: 'Como se llama tu mujer?',
         answers: [
-            { text: 'Cats', correct: true },
-            { text: 'Dog', correct: false },
-            { text: 'Sheep', correct: false },
-            { text: 'Mouse', correct: false },
+            { text: 'Se llama Sharrrr', correct: true },
+            { text: 'Tu mujer se llama Sharrrr', correct: false },
+            { text: 'Se llama Kelly', correct: false },
+            { text: 'Se llama Conor', correct: false },
         ]
     },
     {
-        question: 'Which word means the opposite of "old"?',
+        question: 'Cuanto tiempo llevas aprendiendo español?',
         answers: [
-            { text: 'New', correct: true },
-            { text: 'Tall', correct: false },
-            { text: 'Small', correct: false },
-            { text: 'Happy', correct: false },
+            { text: 'Llevo un par de años aprendiendo español', correct: true },
+            { text: 'LLeva mucho tiempo', correct: false },
+            { text: 'Llevas muchos años', correct: false },
+            { text: 'Llevo tiempo aprendiendo ingles', correct: false },
         ]
     },
     {
-        question: 'What is the past tense of "eat"?',
+        question: 'Como se dice "I have high blood pressure and I feel dizzy"?',
         answers: [
-            { text: 'Ate', correct: true },
-            { text: 'Eating', correct: false },
-            { text: 'Eaten', correct: false },
-            { text: 'Eats', correct: false },
+            { text: 'Tengo presion alta y tengo mareos', correct: true },
+            { text: 'Tengo presion y estoy mareos', correct: false },
+            { text: 'Tengo presion baja y soy cansado', correct: false },
+            { text: 'No me encuentro bien con la presion alta', correct: false },
         ]
     },
     {
-        question: 'Which word is an adjective?',
+        question: 'Como se dice "I take tablets for my high blood pressure 3 times a day"',
         answers: [
-            { text: 'Sun', correct: false },
-            { text: 'Hot', correct: true },
-            { text: 'Run', correct: false },
-            { text: 'Happy', correct: false },
+            { text: 'Toma tabletas para mi corazon 3 tiempos al dia', correct: false },
+            { text: 'Tomo pastillas para mi alta presion tres veces al dia', correct: true },
+            { text: 'Tomo tabletas para mi corazon 3 tiempos al dia', correct: false },
+            { text: 'Tomo pastillas para my alta presion tres veces a la dia', correct: false },
         ]
     }
 ];
 
 const intermediateQuestions = [
     {
-        question: "What is the past participle of the verb 'swim'?",
+        question: "Como se dice "I fell and my knee is sore"?",
         answers: [
-            { text: "Swimmed", correct: false },
-            { text: "Swam", correct: true },
-            { text: "Swum", correct: false },
-            { text: "Swimming", correct: false }
+            { text: "Fui y me duele el tobillo", correct: false },
+            { text: "Me caí y me duele la rodilla", correct: true },
+            { text: "Fingí y me duele la cabeza", correct: false },
+            { text: "Me caigo y me duele el corazon", correct: false }
         ]
     },
     {
-        question: "Choose the correct form of the verb: 'She ____ a book every day.'",
+        question: "Choose the correct English sentence: 'Me duele mucho la muela de juicio'",
         answers: [
-            { text: "Reads", correct: true },
-            { text: "Reading", correct: false },
-            { text: "Read", correct: false },
-            { text: "To read", correct: false }
+            { text: "My wisdom tooth hurts a lot", correct: true },
+            { text: "My upper tooth hurts a lot", correct: false },
+            { text: "My tooth on my lower jaw hurts a lot", correct: false },
+            { text: "My jawbone hurts a lot", correct: false }
         ]
     },
     {
-        question: "What is the opposite of 'expand'?",
+        question: "Como se diría 'I do not feel well, my heart is beating really fast' (Bare in mind that all of these phrases are correct, so take them down, but only one is how you would say it in Spanish)?",
         answers: [
-            { text: "Shrink", correct: true },
-            { text: "Grow", correct: false },
-            { text: "Increase", correct: false },
-            { text: "Extend", correct: false }
+            { text: "No me encuentro bien, mi corazon está pitando muy rapdio", correct: true },
+            { text: "No me siento bien,", correct: false },
+            { text: "No estoy bien, estoy mareado", correct: false },
+            { text: "No me encuentro bien, voy a vomitar", correct: false }
         ]
     },
     {
-        question: "Choose the correct preposition: 'I'm going ____ vacation next week.'",
+        question: "Como se dice: 'I have a house here and I am only here for a few days y I do not feel well' (Bare in mind that all of these phrases are correct, so take them down, but only one is how you would say it in Spanish)",
         answers: [
-            { text: "On", correct: true },
-            { text: "At", correct: false },
-            { text: "In", correct: false },
-            { text: "With", correct: false }
+            { text: "Tengo una casa aquí pero estoy aquí para pasar un par de días, y no me encuentro bien", correct: true },
+            { text: "Mi casa tiene una piscina y está muy guay pero mi hija no está así que estoy un poco triste", correct: false },
+            { text: "Tengo una casa en Playa Flamenca y voy a pasar unos días aquí pero me siento fatal, me das algo para el dolor?", correct: false },
+            { text: "Mi casa está situada en Playa Flamenca, está lejos y no puedo respirar bien", correct: false }
         ]
     },
     {
-        question: 'Which word is an adverb?',
+        question: 'Choose the right words for the following pieces of vocabulary: "Heart, stomach, head, pain, tablets, back, ankle, dizzy"',
         answers: [
-            { text: 'Quickly', correct: true },
-            { text: 'House', correct: false },
-            { text: 'Jumped', correct: false },
-            { text: 'Beautiful', correct: false },
+            { text: 'el corazon, el ojo, el hombro, el dolor, las pastillas, la muñeca, el tobillo, tengo mareos ', correct: false },
+            { text: 'el oído, el estómago, la cabeza, el pie, las pastillas, la oreja, el tobillo, tengo mareos', correct: false },
+            { text: 'el corazon, el estómago, la cabeza, el dolor, las pastillas, la espalda, el tobillo, tengo mareos', correct: true },
+            { text: 'el dedp, el estómago, la hígado, el dolor, las pastillas, la espalda, el tobillo, estoy mareos', correct: false },
         ]
     },
     {
-        question: 'Choose the correct synonym for "happy".',
+        question: 'How do you say "I need to see a doctor, it is an emergency. I have my European health card". (Bare in mind all of these phrases you may need in the future padre)',
         answers: [
-            { text: 'Sad', correct: false },
-            { text: 'Joyful', correct: true },
-            { text: 'Angry', correct: false },
-            { text: 'Tired', correct: false },
+            { text: 'Necesito ver un médico, hay un problema con mi corazon. Tengo mi tarjeta sanitaria europea', correct: false },
+            { text: 'Necesito ver un médico, es una emergencia. Tengo mi tarjeta sanitaria europea', correct: true },
+            { text: 'Tengo que ver un docotr, hay una emergencia. Se me han acabdo mis pastillas y tengo la receta', correct: false },
+            { text: 'Quiero ver un médico, es una emergencia. Tengo la receta de mi médico de Irlanda', correct: false },
         ]
     },
     {
-        question: 'Which of the following is an example of an indefinite pronoun?',
+        question: 'How do you say "3 hours ago I started to feel dizzy and I started breathing heavily" (bare in mind all phrases are grammtically correct, take note)?',
         answers: [
-            { text: 'He', correct: false },
-            { text: 'They', correct: false },
-            { text: 'Everyone', correct: true },
-            { text: 'My', correct: false },
+            { text: 'Hace 3 minutos me ha empezado a doler el pecho y ahora respiro muy hundo', correct: false },
+            { text: 'Hace 3 días me mareé y me puse mal', correct: false },
+            { text: 'Hace 3 horas he empezado a marearme y he empezado a respirar muy fuerte', correct: true },
+            { text: 'Hace 3 horas me he mareado y ahora no me siento bien', correct: false },
         ]
     },
     {
-        question: 'What is the correct past participle of the verb "swim"?',
+        question: 'How do you say "Yesterday, after eating, I experienced stomach pain and nausea"?',
         answers: [
-            { text: 'Swam', correct: false },
-            { text: 'Swum', correct: true },
-            { text: 'Swimmed', correct: false },
-            { text: 'Swimming', correct: false },
+            { text: 'Ayer, después de comer, me duele la cabeza y me siento débil', correct: false },
+            { text: 'Ayer, después de comer, tuve dolor de estómago y náuseas', correct: true },
+            { text: 'Ayer, antes de comer, me sentí mal y me dolió la garganta', correct: false },
+            { text: 'Ayer, después de cenar, me dio fiebre y me dolían las piernas', correct: false }
         ]
     },
     {
-        question: 'Identify the correct spelling.',
+        question: 'How do you say "This morning, I woke up with a sore throat and a cough"?',
         answers: [
-            { text: 'Recieve', correct: false },
-            { text: 'Receive', correct: true },
-            { text: 'Recievee', correct: false },
-            { text: 'Receave', correct: false },
+            { text: 'Esta mañana, me desperté con dolor de cabeza y congestión nasal', correct: false },
+            { text: 'Esta mañana, me levanté con dolor de garganta y tos', correct: true },
+            { text: 'Esta mañana, después de dormir, me sentí débil y mareado', correct: false },
+            { text: 'Esta mañana, me dolieron los ojos y no pude respirar bien', correct: false }
         ]
     },
     {
-        question: 'Which of the following is a subordinating conjunction?',
+        question: 'How do you say "Last week, I twisted my ankle while walking in the park"?',
         answers: [
-            { text: 'And', correct: false },
-            { text: 'But', correct: false },
-            { text: 'Although', correct: true },
-            { text: 'Or', correct: false },
+            { text: 'La semana pasada, me caí y me rompí la pierna mientras caminaba en el parque', correct: false },
+            { text: 'La semana pasada, me torcí el tobillo mientras caminaba en el parque', correct: true },
+            { text: 'La semana pasada, me resbalé y me golpeé la cabeza en el parque', correct: false },
+            { text: 'La semana pasada, me tropecé y me corté la mano en el parque', correct: false }
         ]
-    }
+    }    
 
 ];
 
 const advancedQuestions = [
-    {
-        question: "Which of the following is an example of an idiom? 'Break a leg', 'Runny nose', 'Piece of cake', 'High five'",
-        answers: [
-            { text: "Runny nose", correct: false },
-            { text: "Piece of cake", correct: true },
-            { text: "High five", correct: false },
-            { text: "Break a leg", correct: false }
-        ]
-    },
-    {
-        question: "What does the phrasal verb 'get over' mean?",
-        answers: [
-            { text: "To recover from something", correct: true },
-            { text: "To receive something", correct: false },
-            { text: "To understand something", correct: false },
-            { text: "To give up on something", correct: false }
-        ]
-    },
-    {
-        question: "Choose the correct word to complete the sentence: 'She has a great ____ of humor.'",
-        answers: [
-            { text: "Sense", correct: true },
-            { text: "Feeling", correct: false },
-            { text: "Taste", correct: false },
-            { text: "Touch", correct: false }
-        ]
-    },
-    {
-        question: "What is the plural form of 'datum'?",
-        answers: [
-            { text: "Data", correct: true },
-            { text: "Datas", correct: false },
-            { text: "Datums", correct: false },
-            { text: "Datae", correct: false }
-        ]
-    },
-    {
-        question: 'What is the correct plural form of "ox"?',
-        answers: [
-            { text: 'Oxen', correct: true },
-            { text: 'Oxes', correct: false },
-            { text: 'Oxies', correct: false },
-            { text: 'Oxs', correct: false },
-        ]
-    },
-    {
-        question: 'Which word is a synonym for "generous"?',
-        answers: [
-            { text: 'Stingy', correct: false },
-            { text: 'Kind', correct: true },
-            { text: 'Rude', correct: false },
-            { text: 'Lazy', correct: false },
-        ]
-    },
-    {
-        question: 'What is the superlative form of "good"?',
-        answers: [
-            { text: 'Better', correct: false },
-            { text: 'Best', correct: true },
-            { text: 'Gooder', correct: false },
-            { text: 'Goodest', correct: false },
-        ]
-    },
-    {
-        question: 'Which word is an adverb?',
-        answers: [
-            { text: 'Quickly', correct: true },
-            { text: 'House', correct: false },
-            { text: 'Jumped', correct: false },
-            { text: 'Beautiful', correct: false },
-        ]
-    },
-    {
-        question: 'Choose the correct synonym for "happy".',
-        answers: [
-            { text: 'Sad', correct: false },
-            { text: 'Joyful', correct: true },
-            { text: 'Angry', correct: false },
-            { text: 'Tired', correct: false },
-        ]
-    },
-    {
-        question: 'What is the opposite of "strong"?',
-        answers: [
-            { text: 'Weak', correct: true },
-            { text: 'Powerful', correct: false },
-            { text: 'Brave', correct: false },
-            { text: 'Fast', correct: false },
-        ]
-    }
+    [
+        {
+            question: 'How do you say "I would like to order a pizza with pepperoni and mushrooms"?',
+            answers: [
+                { text: 'Disculpe, quisiera pedir una hamburguesa con papas fritas', correct: false },
+                { text: 'Perdón, quiero una ensalada con pollo y aderezo', correct: false },
+                { text: 'Quiero una pizza con pepperoni y champiñones', correct: true },
+                { text: 'Disculpa, necesito un sándwich con jamón y queso', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "Can I have a coffee with milk, please"?',
+            answers: [
+                { text: '¿Puede darme una cerveza, por favor?', correct: false },
+                { text: '¿Podría traerme un refresco de naranja, por favor?', correct: false },
+                { text: '¿Me pones un café con leche, por favor?', correct: true },
+                { text: '¿Me puede dar una botella de agua, por favor?', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "I need to buy eggs, milk, and bread at the supermarket"?',
+            answers: [
+                { text: 'Necesito comprar carne y pescado en la panadería', correct: false },
+                { text: 'Quiero comprar frutas y verduras en la tienda de ropa', correct: false },
+                { text: 'Tengo que comprar huevos, leche y pan en el supermercado', correct: true },
+                { text: 'Me gustaría adquirir vino y queso en la farmacia', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "Where is the nearest pharmacy?"?',
+            answers: [
+                { text: '¿Dónde está la biblioteca más cercana?', correct: false },
+                { text: '¿Puede indicarme dónde está el cine?', correct: false },
+                { text: '¿Dónde está la farmacia más cercana?', correct: true },
+                { text: '¿Me puede decir cómo llegar al parque?', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "I would like to go to the museum, how can I get there?"?',
+            answers: [
+                { text: 'Me gustaría ir al restaurante, ¿cómo llego?', correct: false },
+                { text: 'Quiero visitar el zoológico, ¿dónde está?', correct: false },
+                { text: 'Me gustaría ir al museo, ¿cómo puedo llegar?', correct: true },
+                { text: 'Quisiera ir al cine, ¿dónde está?', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "I\'d like a menu, please" at a restaurant?',
+            answers: [
+                { text: 'Quisiera un periódico, por favor', correct: false },
+                { text: 'Me gustaría una lista de precios, por favor', correct: false },
+                { text: 'Me das el menú, por favor', correct: true },
+                { text: 'Quiero una tarjeta de crédito, por favor', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "I need to buy a metro ticket to go downtown"?',
+            answers: [
+                { text: 'Necesito comprar un boleto de avión para ir al centro', correct: false },
+                { text: 'Quiero un billete de tren para ir al centro comercial', correct: false },
+                { text: 'Necesito comprar un billete de metro para ir al centro', correct: true },
+                { text: 'Me gustaría un pase de autobús para ir al centro histórico', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "Excuse me, where is the nearest bus stop?"?',
+            answers: [
+                { text: 'Perdón, ¿dónde está la tienda de ropa más cercana?', correct: false },
+                { text: 'Disculpe, ¿puede decirme dónde está el cine?', correct: false },
+                { text: 'Perdón, ¿dónde está la parada de autobús más cercana?', correct: true },
+                { text: 'Disculpe, ¿puede indicarme cómo llegar a la estación de tren?', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "I would like to buy a ticket for the 3 o\'clock train"?',
+            answers: [
+                { text: 'Quiero comprar un boleto para el autobús de las 3', correct: false },
+                { text: 'Me gustaría comprar un ticket para el tren de las 3 en punto', correct: true },
+                { text: 'Deseo adquirir una entrada para el avión de las 3', correct: false },
+                { text: 'Necesito una entrada para el metro de las 3', correct: false }
+            ]
+        },
+        {
+            question: 'How do you say "What time does the supermarket close today?"?',
+            answers: [
+                { text: '¿A qué hora abre la tienda mañana?', correct: false },
+                { text: '¿Cuándo cierra la farmacia hoy?', correct: false },
+                { text: '¿A qué hora cierra el supermercado hoy?', correct: true },
+                { text: '¿Cuándo abre la biblioteca hoy?', correct: false }
+            ]
+        }
+    ]
+    
 ];
 
 let difficulty;
