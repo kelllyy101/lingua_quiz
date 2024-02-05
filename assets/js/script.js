@@ -41,7 +41,7 @@ document.getElementById("user").addEventListener("keydown", function (event) {
 
 const beginnerQuestions = [
     {
-        tion: "Como te llamas?",
+        question: "Como te llamas?",
         answers: [
             { text: "Mi llamo es Ken", correct: false },
             { text: "Mi nombre son Ken", correct: false },
